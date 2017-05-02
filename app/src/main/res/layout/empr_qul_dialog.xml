@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/colorPrimaryDark"
+   android:textAppearance="?android:textAppearanceMedium"
+    android:textColor="@color/colorWhite"
+    android:text="Quilification"
+    android:paddingTop="10dp"
+    android:gravity="center_horizontal"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialogedit"
+        android:gravity="top"
+        android:lines="5"
+        android:padding="3dp"
+        android:hint="Quilification"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <Button
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Save"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/diaglog_button"
+        android:layout_alignParentRight="true"
+     android:background="@color/colorPrimaryDark"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancle"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/diaglog_buttoncancle"
+        android:background="@color/colorPrimaryDark"/>
+</RelativeLayout>
+</LinearLayout>

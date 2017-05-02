@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">JobReady365_</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_jpolicy">JPolicy</string>
+  <string name="policy">Your use of the Service is subject to this Acceptable Use Policy.
+                If you are found to be in violation of our policies at any time, as determined
+    by Application Craft ("AC" or "Company") in its sole discretion, we may warn you or suspend or terminate your account.
+    Please note that we may change our Acceptable Use Policy at any time, and pursuant to the AC Terms, it is your responsibility to keep up-to-date with and adhere to the policies posted here. All capitalized terms used herein have the meanings stated in the Terms, unless stated otherwise.</string>
+    <string name="title_activity_jsign_up">JSignUpActivity</string>
+    <string name="title_activity_jresume">JResumeActivity</string>
+    <string name="title_activity_empr_company_pro">empr_company_pro</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_employer_comp">EmployerComp</string>
+    <string name="title_activity_emprjobpost">Emprjobpost</string>
+</resources>
