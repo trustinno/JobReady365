@@ -8,12 +8,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.goldenictsolutions.win.jobready365_.JSignUpActivity;
 import com.goldenictsolutions.win.jobready365_.R;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 public class Emprcompro extends AppCompatActivity {
 
@@ -24,16 +26,13 @@ public class Emprcompro extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        android.app.ActionBar actionBar=getActionBar();
+        String [] state={"Yangon","Mandalay","ShanState"};
+        ArrayAdapter <String> stateadapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,state);
+        MaterialBetterSpinner statematerialspinner=(MaterialBetterSpinner)findViewById(R.id.township_spinner);
+        statematerialspinner.setAdapter(stateadapter);
 
-        ImageView imageView=(ImageView)findViewById(R.id.empr_back_icon);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Emprcompro.this, JSignUpActivity.class);
-                startActivity(intent);
-            }
-        });
+
+
 
         Button button=(Button)findViewById(R.id.gotopost);
         button.setOnClickListener(new View.OnClickListener() {
@@ -46,15 +45,6 @@ public class Emprcompro extends AppCompatActivity {
             }
         });
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
 }
