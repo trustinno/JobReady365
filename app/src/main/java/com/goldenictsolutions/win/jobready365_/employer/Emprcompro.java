@@ -34,6 +34,7 @@ public class Emprcompro extends AppCompatActivity {
 
 
 
+
         Button button=(Button)findViewById(R.id.gotopost);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
