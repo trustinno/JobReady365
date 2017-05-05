@@ -29,12 +29,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:textAppearance="?android:textAppearanceMedium"
+                android:textAppearance="?android:textAppearanceLarge"
                 android:text="Company Profile"
                 android:textStyle="bold"
                 android:paddingBottom="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_horizontal_margin"
-                android:textColor="@color/greendark"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
 
@@ -78,6 +78,7 @@
                     android:layout_marginLeft="14dp"
                     android:hint="Telephone"
                     android:paddingLeft="8dp"
+                    android:inputType="phone"
                     android:background="@drawable/border"
                     />
 
@@ -121,8 +122,8 @@
                     android:paddingTop="@dimen/empr_between_layout"
                     android:src="@drawable/ic_school_black_24dp"/>
 
-                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                    android:id="@+id/township_spinner"
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/state_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="14dp"
@@ -145,10 +146,11 @@
                     android:paddingTop="@dimen/empr_between_layout"
                     android:src="@drawable/ic_school_black_24dp"/>
 
-                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                <android.support.v7.widget.AppCompatSpinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="14dp"
+                    android:id="@+id/township_spinner"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:textColorHint="#05ab9a"/>
 
@@ -190,6 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:maxLines="1"
+                    android:inputType="phone"
                     android:layout_marginLeft="14dp"
                     android:hint="Telephone"
                     android:paddingLeft="8dp"
@@ -211,6 +214,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:maxLines="1"
+                    android:inputType="phone"
                     android:layout_marginLeft="14dp"
                     android:hint="Secondary Person"
                     android:paddingLeft="8dp"

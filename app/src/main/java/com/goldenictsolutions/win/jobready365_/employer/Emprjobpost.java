@@ -69,7 +69,6 @@ public class Emprjobpost extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-
                 dialog.getWindow().setAttributes(lp);
 
                 dialog.show();
@@ -77,11 +76,11 @@ public class Emprjobpost extends AppCompatActivity {
             }
         });
 
-        ImageView imageView=(ImageView)findViewById(R.id.empr_back_icon);
+     Button imageView=(Button)findViewById(R.id.gotocompro);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Emprjobpost.this, Emprcompro.class);
+                Intent intent=new Intent(Emprjobpost.this, Employer.class);
                 startActivity(intent);
             }
         });
