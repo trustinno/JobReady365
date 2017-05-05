@@ -38,6 +38,10 @@
         <activity
             android:name=".employer.Emprjobpost"
             android:label="@string/title_activity_emprjobpost"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".employer.Employer"
+            android:label="@string/title_activity_employer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context="com.goldenictsolutions.win.jobready365_.employer.EmprJobPostVancancy">
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.EmprDashboard">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
