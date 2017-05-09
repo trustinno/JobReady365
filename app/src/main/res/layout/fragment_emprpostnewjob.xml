@@ -1,0 +1,501 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Emprpostnewjob">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/empr_between_layout"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:focusable="false"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="6dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:maxLines="1"
+                        android:layout_marginLeft="14dp"
+                        android:hint="Company Name"
+                        android:paddingLeft="8dp"
+                        android:background="@drawable/border"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                        android:id="@+id/android_material_design_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:hint="Choose Your Job Type"
+                        android:textColorHint="#05ab9a"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:hint="Job Category"
+                        android:textColorHint="#05ab9a"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:maxLines="1"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="9dp"
+                        android:hint="Position"
+                        android:paddingLeft="8dp"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_school_black_24dp"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:maxLines="1"
+                        android:id="@+id/editquilifi"
+                        android:clickable="true"
+                        android:paddingTop="3dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:layout_marginLeft="14dp"
+                        android:paddingLeft="10dp"
+                        android:text="Qualification"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_school_black_24dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:maxLines="1"
+                        android:layout_marginLeft="14dp"
+                        android:paddingLeft="10dp"
+                        android:hint="Quantity"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+
+                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                        android:id="@+id/android_material_design_spinner3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:hint="Salary Range(MMK)"
+                        android:textColorHint="#05ab9a"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:maxLines="3"
+                        android:layout_marginLeft="10dp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:hint="Working Experience"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+
+
+
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingBottom="6dp">-->
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:paddingRight="5dp"-->
+                <!--android:src="@drawable/ic_school_black_24dp"/>-->
+
+                <!--<com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner-->
+                <!--android:id="@+id/android_material_design_spinner1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textAppearance="?android:textAppearanceMedium"-->
+                <!--android:hint="Choose Your Job Type"-->
+                <!--android:textColorHint="#05ab9a"/>-->
+
+                <!--</LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:maxLines="1"
+                        android:hint="Language Skill"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+                    <Switch
+                        android:text="Graduated?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:paddingLeft="10dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:id="@+id/switch1"
+                        app:theme="@style/BrandedSwitch.control"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+                    <Switch
+                        android:text="Single?"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch2"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="9dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        app:theme="@style/BrandedSwitch.control"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_school_black_24dp"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+
+                    <Switch
+                        android:text="Accommodation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch3"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        app:theme="@style/BrandedSwitch.control"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_school_black_24dp"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+                    <Switch
+                        android:text="Food"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/switch4"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_school_black_24dp"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                    <Switch
+                        android:text="Transportation"
+                        android:layout_width="match_parent"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch5"
+                        app:theme="@style/BrandedSwitch.control"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_school_black_24dp"
+                        android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+                    <Switch
+                        android:text="Training"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/switch6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="15dp"
+                        android:src="@drawable/ic_school_black_24dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="5"
+                        >
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/border"
+                            android:hint="Minimum"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_weight="1"
+                            android:text="To"
+                            />
+
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/border"
+                            android:hint="Maximum"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingBottom="6dp">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:paddingRight="5dp"-->
+                <!--android:src="@drawable/ic_restaurant_black_24dp"/>-->
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="32dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:background="@drawable/border"-->
+                <!--android:textAppearance="?android:textAppearanceMedium"-->
+                <!--android:text="Facilities"/>-->
+                <!--</LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_school_black_24dp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:maxLines="3"
+                        android:layout_marginLeft="10dp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:hint="Working Experience"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:text="Save"
+                    android:layout_marginBottom="@dimen/empr_between_layout"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorback"
+                    android:id="@+id/gotoemp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

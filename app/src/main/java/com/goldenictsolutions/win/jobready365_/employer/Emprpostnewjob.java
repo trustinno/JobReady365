@@ -10,17 +10,17 @@ import android.view.ViewGroup;
 
 import com.goldenictsolutions.win.jobready365_.R;
 
-public class EmprDashboard extends Fragment {
+public class Emprpostnewjob extends Fragment {
 
-    public EmprDashboard() {
+    public Emprpostnewjob() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_empr_dashboard, container, false);
+        return inflater.inflate(R.layout.fragment_emprpostnewjob, container, false);
     }
+
 }

@@ -15,13 +15,13 @@
 
     <style name="BrandedSwitch.control" parent="Theme.AppCompat.Light">
         <!-- active thumb & track color (30% transparency) -->
-        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorback</item>
 
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="colorPrimary">@color/greendark</item>
-        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorbacklight</item>
+        <item name="colorPrimaryDark">@color/colorback</item>
 
     </style>
 
