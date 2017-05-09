@@ -25,8 +25,6 @@ public class Employer extends AppCompatActivity implements OnTabSelectListener {
         fragmentTransaction.commit();
 
     }
-
-
     @Override
     public void onTabSelected(@IdRes int tabId) {
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
