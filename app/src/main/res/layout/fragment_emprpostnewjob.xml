@@ -62,6 +62,7 @@
                         android:id="@+id/android_material_design_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Choose Your Job Type"
                         android:textColorHint="#05ab9a"/>
@@ -83,6 +84,7 @@
                     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Job Category"
                         android:textColorHint="#05ab9a"/>
@@ -125,14 +127,14 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="32dp"
+                        android:layout_height="30dp"
                         android:maxLines="1"
                         android:id="@+id/editquilifi"
                         android:clickable="true"
                         android:paddingTop="3dp"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:layout_marginLeft="14dp"
-                        android:paddingLeft="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:paddingLeft="14dp"
                         android:text="Qualification"
                         android:background="@drawable/border"
                         />
@@ -151,9 +153,9 @@
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="32dp"
+                        android:layout_height="30dp"
                         android:maxLines="1"
-                        android:layout_marginLeft="14dp"
+                        android:layout_marginLeft="20dp"
                         android:paddingLeft="10dp"
                         android:hint="Quantity"
                         android:background="@drawable/border"
@@ -178,6 +180,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Salary Range(MMK)"
+                        android:layout_marginLeft="10dp"
                         android:textColorHint="#05ab9a"/>
 
                 </LinearLayout>
@@ -197,7 +200,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:maxLines="3"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="15dp"
                         android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:hint="Working Experience"
                         android:background="@drawable/border"
@@ -247,6 +250,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
+                        android:paddingLeft="@dimen/empr_between_layout"
+                        android:layout_marginLeft="10dp"
                         android:hint="Language Skill"
                         android:background="@drawable/border"
                         />
@@ -269,6 +274,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="9dp"
                         android:paddingLeft="10dp"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:id="@+id/switch1"
                         app:theme="@style/BrandedSwitch.control"
@@ -290,6 +296,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/switch2"
                         android:paddingLeft="10dp"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:layout_marginTop="9dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         app:theme="@style/BrandedSwitch.control"/>
@@ -313,6 +320,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/switch3"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
                         app:theme="@style/BrandedSwitch.control"
                         />
@@ -334,6 +342,7 @@
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         app:theme="@style/BrandedSwitch.control"
                         android:id="@+id/switch4"
                         />
@@ -359,6 +368,7 @@
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_height="wrap_content"
                         android:id="@+id/switch5"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         app:theme="@style/BrandedSwitch.control"
                         />
 
@@ -381,6 +391,7 @@
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         app:theme="@style/BrandedSwitch.control"
                         android:id="@+id/switch6" />
 
