@@ -80,12 +80,18 @@ public class Emprjobpost extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Emprjobpost.this, Employer.class);
+                Intent intent=new Intent(Emprjobpost.this,Emprcompro.class);
                 startActivity(intent);
             }
         });
-
-
+        Button gotoemployer=(Button)findViewById(R.id.gotoemp);
+        gotoemployer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+                startActivity(intent);
+            }
+        });
 //        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(this,
 //                android.R.layout.simple_dropdown_item_1line, spinner);
 //        MaterialBetterSpinner materialDesignSpinner1 = (MaterialBetterSpinner)
