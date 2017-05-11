@@ -21,7 +21,10 @@ public class EmprDashboard extends Fragment {
         // Required empty public constructor
     }
 
-Button addcomp_pro,dash_edit;
+Button addcomp_pro,dash_edit,dash_view;
+    FragmentManager fragmentManager = getFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,13 +41,20 @@ Button addcomp_pro,dash_edit;
             @Override
             public void onClick(View v) {
                 Emprdashcompro emprdashcompro=new Emprdashcompro();
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.empr_container, emprdashcompro);
                 fragmentTransaction.commit();
 
             }
         });
+
+        dash_view=(Button)view.findViewById(R.id.empr_dash_view);
+        dash_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
 return view;
     }
