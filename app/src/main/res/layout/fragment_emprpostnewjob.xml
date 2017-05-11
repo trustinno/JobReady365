@@ -8,7 +8,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
+        android:scrollbarTrackVertical="@drawable/empr_scroll">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

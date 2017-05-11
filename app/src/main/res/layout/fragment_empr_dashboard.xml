@@ -2,11 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/empr_dashboard_container"
     tools:context="com.goldenictsolutions.win.jobready365_.employer.EmprDashboard">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
+        android:scrollbarTrackVertical="@drawable/empr_scroll"
+        >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,20 +76,15 @@
                 android:weightSum="2"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/businessspinner"
-                        android:hint="dkdiekeie"/>
-
-                </LinearLayout>
+                        android:hint="dkdiekeie"
+                        android:layout_weight="1"/>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="right"
@@ -87,14 +92,15 @@
                     android:paddingBottom="2dp"
                     android:layout_weight="1">
                     <Button
-                        android:layout_width="wrap_content"
+                        android:layout_width="70dp"
                         android:textAppearance="?android:textAppearanceSmall"
                         android:layout_height="30dp"
+                        android:id="@+id/empr_dash_comedit"
                         android:background="@color/colorback"
                         android:text="Edit"/>
 
                     <Button
-                        android:layout_width="wrap_content"
+                        android:layout_width="70dp"
                         android:textAppearance="?android:textAppearanceSmall"
                         android:layout_height="30dp"
                         android:padding="2dp"
@@ -199,25 +205,9 @@
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
-
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!---->
-        <!--&gt;-->
-
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="ieieieie"/>-->
-
-
-        <!--</LinearLayout>-->
-        <!---->
-
     </RelativeLayout>
-
+    </ScrollView>
+</LinearLayout>
 
 
 </FrameLayout>

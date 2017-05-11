@@ -1,0 +1,212 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Emprdashcompro">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
+        android:scrollbarTrackVertical="@drawable/empr_scroll"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/empr_between_layout"
+                    android:layout_weight="1"
+                    >
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="105dp"
+                        android:src="@drawable/ic_jobready365"
+                        android:id="@+id/empr_compro2_logo"
+                        android:layout_gravity="right"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Business Type"
+                        android:gravity="right"
+                        android:id="@+id/empr_compro2_bunty"
+                        android:paddingTop="@dimen/empr_between_layout"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorblack"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Primary Contact Person"
+                        android:id="@+id/empr_compro2_pri"
+                        android:gravity="right"
+                        android:paddingTop="@dimen/empr_between_layout"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorblack"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile"
+                        android:gravity="right"
+                        android:id="@+id/empr_compro2_primo"
+                        android:paddingTop="@dimen/empr_between_layout"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorblack"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Secondary Contact Person"
+                        android:id="@+id/empr_compro2_prisec"
+                        android:gravity="right"
+                        android:paddingTop="@dimen/empr_between_layout"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorblack"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile"
+                        android:gravity="right"
+                        android:id="@+id/empr_compro2_primo2"
+                        android:paddingTop="@dimen/empr_between_layout"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="@color/colorblack"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/empr_between_layout"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/empr_between_layout"
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/empr_between_layout"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Golden ICT Solution Co,Ltd."
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorblack"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0979848775,09586843345"
+                            android:paddingTop="2dp"
+                            android:textColor="@color/colorblack"
+                            android:paddingBottom="2dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Info@JobReady365.com"
+                            android:paddingTop="2dp"
+                            android:textColor="@color/colorblack"
+                            android:paddingBottom="2dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No.10,Param Rd,Thamine Tsp.Yangon,Myanmar"
+                            android:paddingTop="2dp"
+                            android:textColor="@color/colorblack"
+                            />
+                    </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Information Technology"
+                            android:paddingTop="@dimen/activity_horizontal_margin"
+                            android:paddingBottom="@dimen/empr_between_layout"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="U Hla"
+                            android:paddingBottom="15dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="09798484775"
+                            android:paddingBottom="20dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="U Mya"
+                        android:paddingBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0958335374"
+                        android:paddingBottom="@dimen/empr_between_layout"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorback"
+                android:layout_marginTop="@dimen/empr_between_layout"
+                android:layout_marginBottom="@dimen/empr_between_layout"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_horizontal_margin">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:text="About"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorblack"
+                    android:text="Myanmar officially the Republic of the Union of Myanmar, also known as Burma, is a sovereign state in the region of Southeast Asia and has been a member of ..."/>
+
+            </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin">
+                      <Button
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Back"
+                          android:id="@+id/empr_dash_comback"
+                          android:layout_alignParentLeft="true"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modify"
+                    android:id="@+id/empr_dash_commod"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
