@@ -21,7 +21,7 @@ public class Employer extends AppCompatActivity implements OnTabSelectListener {
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(this);
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, new EmprDashboard());
+        fragmentTransaction.replace(R.id.empr_container, new EmprDashboard());
         fragmentTransaction.commit();
 
     }
@@ -32,10 +32,10 @@ public class Employer extends AppCompatActivity implements OnTabSelectListener {
         if (tabId == R.id.tab_favorites)
 
         {
-            fragmentTransaction.replace(R.id.container, new EmprDashboard());
+            fragmentTransaction.replace(R.id.empr_container, new EmprDashboard());
             fragmentTransaction.commit();
         } else if (tabId == R.id.tab_nearby) {
-            fragmentTransaction.replace(R.id.container, new Emprpostnewjob());
+            fragmentTransaction.replace(R.id.empr_container, new Emprpostnewjob());
             fragmentTransaction.commit();
         }
 

@@ -38,10 +38,11 @@
 
     <tab
         id="@+id/tab_search"
-        icon="@drawable/ic_exit_to_app_black_24dp"
-        title="Logout"
+        icon="@drawable/ic_menu_black_24dp"
+        title="More"
         activeColor="@color/colorWhite"
         inActiveColor="@color/colorblack"
-        barColorWhenSelected="@color/colorred"
+        barColorWhenSelected="@color/colorback"
         badgeBackgroundColor="#FFFFFF"/>
+
 </tabs>

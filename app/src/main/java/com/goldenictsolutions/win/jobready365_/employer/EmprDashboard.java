@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,22 +21,27 @@ public class EmprDashboard extends Fragment {
         // Required empty public constructor
     }
 
-Button addcomp_pro;
+Button addcomp_pro,dash_edit;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_empr_dashboard, container, false);
         Spinner spinner;
-        String [] aa={"rockable","aa","bb"};
+        String [] aa={"Golden ICT Solutions","Trustinno","ChallengerBladeSolution"};
         spinner=(Spinner)view.findViewById(R.id.businessspinner);
         ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this.getContext(),android.R.layout.simple_dropdown_item_1line
                 ,aa);
         spinner.setAdapter(arrayAdapter);
-        addcomp_pro=(Button)view.findViewById(R.id.empr_dash_add);
-        addcomp_pro.setOnClickListener(new View.OnClickListener() {
+        dash_edit=(Button)view.findViewById(R.id.empr_dash_comedit);
+        dash_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Emprdashcompro emprdashcompro=new Emprdashcompro();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.empr_container, emprdashcompro);
+                fragmentTransaction.commit();
 
             }
         });
