@@ -22,8 +22,6 @@ public class EmprDashboard extends Fragment {
     }
 
 Button addcomp_pro,dash_edit,dash_view;
-    FragmentManager fragmentManager = getFragmentManager();
-    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,6 +34,9 @@ Button addcomp_pro,dash_edit,dash_view;
         ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this.getContext(),android.R.layout.simple_dropdown_item_1line
                 ,aa);
         spinner.setAdapter(arrayAdapter);
+final        FragmentManager fragmentManager = getFragmentManager();
+     final    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
         dash_edit=(Button)view.findViewById(R.id.empr_dash_comedit);
         dash_edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +52,9 @@ Button addcomp_pro,dash_edit,dash_view;
         dash_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                    Emprjobopening emprjobopening=new Emprjobopening();
+                fragmentTransaction.replace(R.id.empr_container,emprjobopening);
+                fragmentTransaction.commit();
             }
         });
 
