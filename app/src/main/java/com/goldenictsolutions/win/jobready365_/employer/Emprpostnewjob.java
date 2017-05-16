@@ -25,7 +25,6 @@ public class Emprpostnewjob extends Fragment {
 
     EditText editTextdialog;
     TextView editText;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

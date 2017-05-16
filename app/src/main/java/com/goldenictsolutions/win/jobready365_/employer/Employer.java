@@ -38,7 +38,19 @@ public class Employer extends AppCompatActivity implements OnTabSelectListener {
             fragmentTransaction.replace(R.id.empr_container, new Emprpostnewjob());
             fragmentTransaction.commit();
         }
+        else if (tabId == R.id.tab_friends) {
+            fragmentTransaction.replace(R.id.empr_container, new EmprCandilist());
+            fragmentTransaction.commit();
+        }
 
+        else if (tabId == R.id.tab_search) {
+
+        }
+
+        else if (tabId == R.id.tab_bla) {
+            fragmentTransaction.replace(R.id.empr_container, new EmprOther());
+            fragmentTransaction.commit();
+        }
     }
 }
 
