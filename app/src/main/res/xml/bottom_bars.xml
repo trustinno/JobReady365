@@ -21,14 +21,14 @@
     <tab
         id="@+id/tab_friends"
         icon="@drawable/ic_person_black_24dp"
-        title="Expired"
+        title="Short List"
         activeColor="@color/colorWhite"
         inActiveColor="@color/colorblack"
         barColorWhenSelected="@color/colorback"
         badgeBackgroundColor="#FFFFFF"/>
 
     <tab
-        id="@+id/tab_bla"
+        id="@+id/tab_search"
         icon="@drawable/ic_search_black_24dp"
         title="Search"
         activeColor="@color/colorWhite"
@@ -37,7 +37,7 @@
         badgeBackgroundColor="#FFFFFF"/>
 
     <tab
-        id="@+id/tab_search"
+        id="@+id/tab_bla"
         icon="@drawable/ic_menu_black_24dp"
         title="More"
         activeColor="@color/colorWhite"

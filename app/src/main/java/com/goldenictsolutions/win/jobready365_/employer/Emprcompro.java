@@ -31,9 +31,7 @@ public class Emprcompro extends AppCompatActivity {
         setContentView(R.layout.activity_empr_comp_pro);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         String [] state={"Yangon","Mandalay","ShanState"};
-
         //ArrayAdapter<String> yanadapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,Yan);
        // ArrayAdapter<String>manadapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,Man);
        // ArrayAdapter<String>shanadapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,Shan);

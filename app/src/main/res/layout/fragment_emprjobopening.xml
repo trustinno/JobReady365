@@ -341,12 +341,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:id="@+id/empr_jopen_back"
                 android:text="Back"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:id="@+id/empr_jopen_mod"
                 android:text="Modify"/>
 
 

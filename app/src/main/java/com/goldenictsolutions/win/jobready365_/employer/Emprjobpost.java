@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.goldenictsolutions.win.jobready365_.JPolicy;
 import com.goldenictsolutions.win.jobready365_.R;
@@ -23,6 +24,7 @@ public class Emprjobpost extends AppCompatActivity {
     TextView editText;
     Button diaglogbutton,diaglogbuttoncancle,dialgoyes,dialogno;
     Dialog dialog,backdialog;
+//    String empr_checks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,21 +77,25 @@ public class Emprjobpost extends AppCompatActivity {
 
             }
         });
+final String empr_checks=getIntent().getStringExtra("conbackjopen");
+        if (empr_checks !=null)
+            {
 
-     Button imageView=(Button)findViewById(R.id.gotocompro);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Emprjobpost.this,Emprcompro.class);
-                startActivity(intent);
+                toemp();
             }
-        });
+        else {
+            gobacktocompro();
+        }
+
+
         Button gotoemployer=(Button)findViewById(R.id.gotoemp);
         gotoemployer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent=new Intent(Emprjobpost.this,Employer.class);
                 startActivity(intent);
+
             }
         });
 //        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(this,
@@ -109,6 +115,36 @@ public class Emprjobpost extends AppCompatActivity {
 
 
     }
+    public void toemp(){
+        Button imageView=(Button)findViewById(R.id.gotocompro);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+
+
+    public void gobacktocompro(){
+        Button imageView=(Button)findViewById(R.id.gotocompro);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(Emprjobpost.this,Emprcompro.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
