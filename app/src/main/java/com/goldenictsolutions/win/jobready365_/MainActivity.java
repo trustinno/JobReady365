@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     imageButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent = new Intent(MainActivity.this,JPolicy.class);
-        startActivity(intent);
+        Intent intent1 = new Intent(MainActivity.this,JPolicy.class);
+        startActivity(intent1);
       }
     });
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
