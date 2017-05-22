@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,6 +17,7 @@ public class JSignUpActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private TextView textView;
+    private TabLayout tabLayout;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class JSignUpActivity extends AppCompatActivity {
         Intent intent = new Intent(JSignUpActivity.this,JResumeActivity.class);
         startActivity(intent);
       }
-    }); ///sdfjasdfkljaslkjöfdkajsölkfjaslköfjlkasj
+    });
       textView=(TextView)findViewById(R.id.gotoemp);
       textView.setOnClickListener(new View.OnClickListener() {
           @Override
