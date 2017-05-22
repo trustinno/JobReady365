@@ -27,7 +27,7 @@ public class JSignUpActivity extends AppCompatActivity {
         Intent intent = new Intent(JSignUpActivity.this,JResumeActivity.class);
         startActivity(intent);
       }
-    });
+    }); ///sdfjasdfkljaslkjöfdkajsölkfjaslköfjlkasj
       textView=(TextView)findViewById(R.id.gotoemp);
       textView.setOnClickListener(new View.OnClickListener() {
           @Override
