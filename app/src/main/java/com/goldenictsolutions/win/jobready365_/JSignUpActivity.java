@@ -17,7 +17,6 @@ public class JSignUpActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private TextView textView;
-    private TabLayout tabLayout;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
