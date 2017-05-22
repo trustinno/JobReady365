@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.goldenictsolutions.win.jobready365_.employer.Emprcompro;
 
 public class JSignUpActivity extends AppCompatActivity {
-
+/// tested ksw
     private Button btnLogin;
     private TextView textView;
   @Override
