@@ -15,6 +15,7 @@ import com.goldenictsolutions.win.jobready365_.employer.Emprcompro;
 
 public class JSignUpActivity extends AppCompatActivity {
 /// tested ksw
+    //  asdklfjökldasjflkjaskljf
     private Button btnLogin;
     private TextView textView;
   @Override
