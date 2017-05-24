@@ -185,7 +185,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
                     android:src="@drawable/empr_pri"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -223,7 +222,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
                     android:src="@drawable/empr_secondary"/>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -263,7 +261,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
+
                     android:src="@drawable/ic_empr_coabout"/>
                 <EditText
                     android:layout_width="match_parent"
@@ -278,18 +276,17 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:paddingBottom="12dp">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="5dp"
                     android:src="@drawable/ic_empr_attach"/>
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:maxLines="1"
                     android:layout_marginLeft="14dp"
                     android:hint="Company Logo"
@@ -297,12 +294,14 @@
                     android:textAppearance="?android:textAppearanceMedium"
                     android:background="@drawable/border"/>
                 <Button
-                    android:layout_margin="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="@dimen/empr_between_layout"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/empr_between_layout"
                     android:layout_alignParentRight="true"
                     android:background="@color/colorback"
-                    android:text="Save"
+                    android:text="Upload"
                     />
             </LinearLayout>
             <RelativeLayout
