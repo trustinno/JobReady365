@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_business"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:paddingRight="10dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_list"/>
                 <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                     android:id="@+id/android_material_design_spinner"
                     android:layout_width="match_parent"
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_jobcat"/>
                 <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,9 +105,9 @@
                 android:paddingBottom="6dp">
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_person"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -129,7 +129,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_qulic"/>
 
 
                 <TextView
@@ -156,7 +156,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_school_black_24dp" />
+                    android:src="@drawable/empr_secondary" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:paddingRight="5dp"
-            android:src="@drawable/ic_school_black_24dp"/>
+            android:src="@drawable/ic_empr_amount"/>
 
             <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/android_material_design_spinner3"
@@ -201,7 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp" />
+                    android:src="@drawable/ic_empr_exp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -251,7 +251,7 @@
                     android:layout_height="wrap_content"
                     android:paddingRight="5dp"
                     android:layout_marginRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_lan"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -274,16 +274,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_gra"/>
                 <Switch
                     android:text="Graduated?"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
+                    android:layout_height="match_parent"
                     android:paddingLeft="15dp"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:id="@+id/switch1"
-                    app:theme="@style/BrandedSwitch.control"
+                    android:theme="@style/BrandedSwitch.control"
                     />
             </LinearLayout>
 
@@ -295,16 +294,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp"/>
+                    android:src="@drawable/ic_empr_single"/>
                 <Switch
                     android:text="Single?"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/switch2"
                     android:paddingLeft="15dp"
-                    android:layout_marginTop="9dp"
                     android:textAppearance="?android:textAppearanceMedium"
-                    app:theme="@style/BrandedSwitch.control"/>
+                    android:theme="@style/BrandedSwitch.control"/>
 
             </LinearLayout>
 
@@ -316,17 +314,17 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_school_black_24dp"
+                    android:src="@drawable/accomo"
                     android:paddingRight="@dimen/activity_horizontal_margin"/>
 
 
                 <Switch
                     android:text="Accommodation"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/switch3"
                     android:textAppearance="?android:textAppearanceMedium"
-                    app:theme="@style/BrandedSwitch.control"
+                    android:theme="@style/BrandedSwitch.control"
                     />
 
             </LinearLayout>
@@ -338,15 +336,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:src="@drawable/ic_school_black_24dp"
+                    android:src="@drawable/salad"
                     android:paddingRight="@dimen/activity_horizontal_margin"/>
                 <Switch
                     android:text="Food"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:theme="@style/BrandedSwitch.control"
+                    android:layout_height="match_parent"
+                    android:theme="@style/BrandedSwitch.control"
                     android:id="@+id/switch4"
                     />
             </LinearLayout>
@@ -362,16 +359,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/ic_school_black_24dp"
+                    android:src="@drawable/bus"
                     android:paddingRight="@dimen/activity_horizontal_margin"/>
 
                 <Switch
                     android:text="Transportation"
                     android:layout_width="match_parent"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/switch5"
-                    app:theme="@style/BrandedSwitch.control"
+                    android:theme="@style/BrandedSwitch.control"
                     />
 
             </LinearLayout>
@@ -385,7 +382,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/ic_school_black_24dp"
+                    android:src="@drawable/lecture"
                     android:paddingRight="@dimen/activity_horizontal_margin"/>
 
                 <Switch
@@ -393,7 +390,7 @@
                     android:textAppearance="?android:textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:theme="@style/BrandedSwitch.control"
+                    android:theme="@style/BrandedSwitch.control"
                     android:id="@+id/switch6" />
 
             </LinearLayout>
@@ -477,7 +474,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight="5dp"
-                    android:src="@drawable/ic_school_black_24dp" />
+                    android:src="@drawable/ic_empr_coabout" />
 
                 <EditText
                     android:layout_width="match_parent"
