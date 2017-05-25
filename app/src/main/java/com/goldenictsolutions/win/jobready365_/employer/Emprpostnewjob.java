@@ -12,10 +12,10 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.goldenictsolutions.win.jobready365_.R;
-import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 public class Emprpostnewjob extends Fragment {
 
@@ -35,7 +35,7 @@ public class Emprpostnewjob extends Fragment {
         String[] spinner = {"Alone", "Sanchaung"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
-        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner)
+   Spinner      materialDesignSpinner = (Spinner)
                 view.findViewById(R.id.android_material_design_spinner);
         materialDesignSpinner.setAdapter(arrayAdapter);
         editText = (TextView) view.findViewById(R.id.editquilifi);
@@ -80,9 +80,9 @@ public class Emprpostnewjob extends Fragment {
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line, spinner);
 
-        MaterialBetterSpinner materialDesignSpinner1 = (MaterialBetterSpinner)
+        Spinner materialDesignSpinner1 = (Spinner)
                 view.findViewById(R.id.android_material_design_spinner);
-        materialDesignSpinner.setAdapter(arrayAdapter);
+        materialDesignSpinner1.setAdapter(arrayAdapter1);
 
 
         return view;

@@ -12,12 +12,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.goldenictsolutions.win.jobready365_.JPolicy;
 import com.goldenictsolutions.win.jobready365_.R;
-import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
 
 public class Emprjobpost extends AppCompatActivity {
     EditText editTextdialog;
@@ -37,7 +38,7 @@ public class Emprjobpost extends AppCompatActivity {
         String[] spinner={"Alone","Sanchaung"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
-        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner)
+        Spinner materialDesignSpinner = (Spinner)
                 findViewById(R.id.android_material_design_spinner);
         materialDesignSpinner.setAdapter(arrayAdapter);
         editText=(TextView) findViewById(R.id.editquilifi);

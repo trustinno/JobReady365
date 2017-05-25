@@ -131,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <android.support.v7.widget.AppCompatSpinner
-                        android:id="@+id/state_spinner"
+                        android:id="@+id/empr_state_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
@@ -143,7 +143,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
-                        android:id="@+id/township_spinner"
+                        android:id="@+id/empr_township_spinner"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:textColorHint="#05ab9a"/>
 
