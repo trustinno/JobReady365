@@ -18,9 +18,11 @@ import com.goldenictsolutions.win.jobready365_.R;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Busprovider;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Error_Event;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Serverevent;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerBustype;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerTownship;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnercity;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.TotheCloud;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Businesstype;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
 import com.squareup.otto.Subscribe;
@@ -34,10 +36,12 @@ public class Emprcompro extends AppCompatActivity {
     private   Spinner  townshipspinner,statematerialspinner;
     private List spcityid=new ArrayList<>();
     private List spcity=new ArrayList<>();
-    Spinner spinner1,spinner2;
-    ArrayAdapter<String> adapter1,adapter2;
+    Spinner spinner1,spinner2,spinner3;
+    ArrayAdapter<String> adapter1,adapter2,adapter3;
     private   List sptownshipid=new ArrayList<>();
     private   List sptownship=new ArrayList<>();
+    private   List spbustype=new ArrayList<>();
+    private   List spbustypeid=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,13 +53,13 @@ public class Emprcompro extends AppCompatActivity {
         totheCloud = new TotheCloud();
 
         int city_id_sp=0;
-        int business_type=0;
-
+        int bus_id=0;
+        String jobindustry="";
         String city="";
 
         postcity(city_id_sp,city);
         spcityspinner();
-
+        postbustype(bus_id,jobindustry);
 
 
         Button button=(Button)findViewById(R.id.gotopost);
@@ -81,9 +85,12 @@ public class Emprcompro extends AppCompatActivity {
     {
         totheCloud.gettownship(spcity_id);
     }
+    public void postbustype(int bus_id,String jobindustry){
+        totheCloud.getbusindex(bus_id,jobindustry);
+    }
 
 
-
+    //////////////////////////// SPINNER CITY /////////////////////////////////////
 
     @Subscribe
     public void onServerEvent(ServerEventSpinnercity serverEventSpinnercity)
@@ -104,6 +111,7 @@ public class Emprcompro extends AppCompatActivity {
         }
     }
 
+       //////////////////////////// TOWNSHIPSPINNER ////////////////////////
     @Subscribe
     public void onServeerEvent(ServerEventSpinnerTownship serverEventSpinnerTownship)
     {
@@ -129,7 +137,29 @@ public class Emprcompro extends AppCompatActivity {
         }
     }
 
+           ////////////////////BUSINESSTYPE SPINNER///////////////////////
+    @Subscribe
+    public void onServeerEvent(ServerEventSpinnerBustype serverEventSpinnerBustype)
+    {
 
+        if (!serverEventSpinnerBustype.getServerResponse().equals(null))
+        {
+
+            List<Empr_Businesstype>businesstypes=serverEventSpinnerBustype.getServerResponse().getEmpr_businesstypes();
+            for (int i=0;i<businesstypes.size();i++)
+
+            {
+
+
+                spbustypeid.add(businesstypes.get(i).getBus_id());
+                spbustype.add(businesstypes.get(i).getJob_industry());
+            }
+            spinner3=(Spinner)findViewById(R.id.empr_business_type);
+            adapter3=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,spbustype);
+            adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner3.setAdapter(adapter3);
+        }
+    }
     @Subscribe
     public void onServerEvent(Empr_Serverevent serverEvent) {
 

@@ -57,7 +57,7 @@
                     android:paddingTop="@dimen/empr_between_layout"
                     android:src="@drawable/ic_empr_bustype"/>
 
-                <android.support.v7.widget.AppCompatSpinner
+                <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="14dp"

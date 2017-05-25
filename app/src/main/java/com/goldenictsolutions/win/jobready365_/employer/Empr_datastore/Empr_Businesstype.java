@@ -29,6 +29,6 @@ public class Empr_Businesstype implements Serializable{
 
     public  String getJob_industry()
     {
-        return getJob_industry();
+        return job_industry;
     }
 }

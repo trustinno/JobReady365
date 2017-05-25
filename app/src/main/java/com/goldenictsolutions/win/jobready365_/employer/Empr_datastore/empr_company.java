@@ -7,4 +7,5 @@ import java.io.Serializable;
  */
 
 public class empr_company implements Serializable {
+
 }

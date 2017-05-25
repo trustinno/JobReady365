@@ -54,6 +54,10 @@ public interface Interface {
             @Path("city_id") int spcity_id
     );
 
+    @GET("api/industry")
+    Call<Empr_Server_Response> getbussty(
+            @Query("id") int bus_id,
+            @Query("jobindustry")String jobindustry);
 //
 //    @POST("api/company/{user_id}")
 //    Call<Empr_Server_Response>usepost(@Path("user_id")String user_id, @Body Empr_compro empr_compro);

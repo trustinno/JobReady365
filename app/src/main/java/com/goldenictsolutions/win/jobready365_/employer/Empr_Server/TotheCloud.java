@@ -92,4 +92,45 @@ public class TotheCloud {
 
     }
 
+    public void getbusindex(int bus_id,String jobindustry) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(logging);
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(SERVER_URL)
+                .build();
+        Interface service = retrofit.create(Interface.class);
+        //Call<ServerResponse> call = service.post("login",username,password);
+        //Call<ServerResponse> call = service.post(username,password);
+        Call<Empr_Server_Response> call = service.getbussty(bus_id,jobindustry);
+        //Call<ServerResponse> call = service.post(username,password);
+        call.enqueue(new Callback<Empr_Server_Response>() {
+            @Override
+            public void onResponse(Call<Empr_Server_Response> call, Response<Empr_Server_Response> response) {
+                Log.e(TAG, "Success" + response.code());
+                Log.e(TAG, "Success" + response.body());
+                Log.e(TAG, "Success" + response.message());
+                Empr_Busprovider.getBus().post(new ServerEventSpinnerBustype(response.body()));
+                Log.e(TAG, "Success");
+            }
+
+            @Override
+            public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                Log.e(TAG, "Failure " + t.getMessage());
+                Empr_Busprovider.getBus().post(new Empr_Error_Event(-2, t.getMessage()));
+
+            }
+
+        });
+
+    }
+
+
+
+
+
 }
