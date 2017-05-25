@@ -5,4 +5,18 @@ package com.goldenictsolutions.win.jobready365_.employer.Empr_Server;
  */
 
 public class Empr_Error_Event {
+    private int errorCode;
+    private String errorMsg;
+    public Empr_Error_Event(int errorCode,String errorMsg){
+
+        this.errorCode=errorCode;
+        this.errorMsg=errorMsg;
+
+    }
+    public int getErrorCode(){
+        return errorCode;
+    }
+    public String getErrorMsg(){
+        return errorMsg;
+    }
 }
