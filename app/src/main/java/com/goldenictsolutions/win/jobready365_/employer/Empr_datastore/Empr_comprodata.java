@@ -5,4 +5,6 @@ package com.goldenictsolutions.win.jobready365_.employer.Empr_datastore;
  */
 
 public class Empr_comprodata {
+
+
 }

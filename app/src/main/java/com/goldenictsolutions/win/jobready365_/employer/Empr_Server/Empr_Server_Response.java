@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by zarni on 5/25/17.
  */
 
-public class Server_Response
+public class Empr_Server_Response
 {
     @SerializedName("company")
     private ArrayList<empr_company> empr_companies;
