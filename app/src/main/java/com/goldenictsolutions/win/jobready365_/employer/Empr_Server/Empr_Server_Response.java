@@ -30,6 +30,7 @@ public class Empr_Server_Response
     private ArrayList<Empr_Township>townships =null;
 
 
+
     public ArrayList<empr_company>getEmpr_companies()
     {return empr_companies;}
 

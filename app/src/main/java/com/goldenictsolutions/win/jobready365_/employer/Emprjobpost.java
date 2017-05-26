@@ -34,13 +34,13 @@ public class Emprjobpost extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String[] SPINNERLIST = {"Freelance", "Full Time", "Part Time", "Contract"};
-        String[] spinner={"Alone","Sanchaung"};
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
-        Spinner materialDesignSpinner = (Spinner)
-                findViewById(R.id.android_material_design_spinner);
-        materialDesignSpinner.setAdapter(arrayAdapter);
+//        String[] SPINNERLIST = {"Freelance", "Full Time", "Part Time", "Contract"};
+//        String[] spinner={"Alone","Sanchaung"};
+//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+//                android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
+//        Spinner materialDesignSpinner = (Spinner)
+//                findViewById(R.id.android_material_design_spinner);
+//        materialDesignSpinner.setAdapter(arrayAdapter);
         editText=(TextView) findViewById(R.id.editquilifi);
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +78,7 @@ public class Emprjobpost extends AppCompatActivity {
 
             }
         });
-final String empr_checks=getIntent().getStringExtra("conbackjopen");
+        final String empr_checks=getIntent().getStringExtra("conbackjopen");
         if (empr_checks !=null)
             {
 

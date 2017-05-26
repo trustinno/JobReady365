@@ -2,6 +2,7 @@ package com.goldenictsolutions.win.jobready365_.employer.Empr_inter;
 
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Server_Response;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_comprodata;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_company;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -38,10 +39,6 @@ public interface Interface {
     @PUT("api/company/{id}")
     Call<Empr_Server_Response> postImage(@Path("id") String id, @Part MultipartBody.Part image, @Part("logo") RequestBody logo);
 
-
-
-
-
     @GET("/api/city")
     Call<Empr_Server_Response>getcity(
             @Query("id") int city_id_sp,
@@ -58,6 +55,9 @@ public interface Interface {
     Call<Empr_Server_Response> getbussty(
             @Query("id") int bus_id,
             @Query("jobindustry")String jobindustry);
+
+    @POST("api/company")
+    Call<Empr_Server_Response> post(@Body empr_company empr_company);
 //
 //    @POST("api/company/{user_id}")
 //    Call<Empr_Server_Response>usepost(@Path("user_id")String user_id, @Body Empr_compro empr_compro);

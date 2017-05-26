@@ -65,7 +65,7 @@
                     android:layout_marginRight="5dp"
                     android:paddingRight="10dp"
                     android:src="@drawable/ic_empr_list"/>
-                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                <Spinner
                     android:id="@+id/android_material_design_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                     android:layout_marginRight="10dp"
                     android:paddingRight="5dp"
                     android:src="@drawable/ic_empr_jobcat"/>
-                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:textAppearanceMedium"
@@ -181,7 +181,7 @@
             android:paddingRight="5dp"
             android:src="@drawable/ic_empr_amount"/>
 
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            <Spinner
             android:id="@+id/android_material_design_spinner3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

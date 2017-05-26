@@ -36,12 +36,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:maxLines="1"
+                    android:id="@+id/empr_compro_name"
                     android:layout_marginLeft="14dp"
                     android:hint="Company Name"
                     android:paddingLeft="8dp"
                     android:background="@drawable/border"
                     />
-
             </LinearLayout>
 
             <LinearLayout
@@ -81,30 +81,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:maxLines="1"
+                    android:id="@+id/empr_compro_tel"
                     android:layout_marginLeft="14dp"
                     android:hint="Telephone"
                     android:paddingLeft="8dp"
                     android:inputType="phone"
-                    android:background="@drawable/border"
-                    />
+                    android:background="@drawable/border"/>
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingBottom="6dp">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingRight ="5dp"
                     android:src="@drawable/ic_empr_email"/>
+
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:maxLines="1"
+                    android:id="@+id/empr_compro_email"
                     android:layout_marginLeft="10dp"
                     android:hint="Email"
                     android:paddingLeft="8dp"
@@ -112,7 +114,6 @@
                     />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -153,6 +154,7 @@
                         android:layout_height="30dp"
                         android:maxLines="1"
                         android:hint="Address"
+                        android:id="@+id/empr_compro_address"
                         android:paddingLeft="@dimen/empr_between_layout"
                         android:layout_marginLeft="@dimen/empr_between_layout"
                         android:background="@drawable/border"
@@ -195,6 +197,7 @@
                         android:layout_height="30dp"
                         android:maxLines="1"
                         android:layout_marginLeft="14dp"
+                        android:id="@+id/empr_compro_prip"
                         android:hint="Primary Person"
                         android:paddingLeft="8dp"
                         android:background="@drawable/border"
@@ -207,6 +210,7 @@
                         android:inputType="phone"
                         android:layout_marginLeft="25dp"
                         android:hint="Telephone"
+                        android:id="@+id/empr_compro_pritel"
                         android:paddingLeft="8dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/border"
@@ -234,6 +238,7 @@
                         android:inputType="phone"
                         android:layout_marginLeft="14dp"
                         android:hint="Secondary Person"
+                        android:id="@+id/empr_compro_secp"
                         android:paddingLeft="8dp"
                         android:background="@drawable/border"
                         />
@@ -243,6 +248,7 @@
                         android:maxLines="1"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="25dp"
+                        android:id="@+id/empr_compro_sectel"
                         android:hint="Mobile"
                         android:paddingLeft="8dp"
                         android:background="@drawable/border" />
@@ -267,13 +273,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:maxLines="1"
+                    android:id="@+id/empr_compro_about"
                     android:layout_marginLeft="14dp"
                     android:hint="Company About"
                     android:paddingLeft="8dp"
                     android:background="@drawable/border"
                     />
-
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -288,6 +295,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:maxLines="1"
+                    android:id="@+id/empr_compro_comlo"
                     android:layout_marginLeft="14dp"
                     android:hint="Company Logo"
                     android:padding="8dp"
