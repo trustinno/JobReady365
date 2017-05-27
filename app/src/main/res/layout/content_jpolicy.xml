@@ -16,19 +16,27 @@
         >
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:background="@drawable/border_textview">
 
 
+            <Switch
+                android:id="@+id/switch4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:layout_weight="1"
+                android:showText="true"
+                android:text=""
+                android:textOff="eng"
+                android:textOn="mm" />
+
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="551dp"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginTop="36dp"
-                android:background="@drawable/border_textview_small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
 
                 android:orientation="vertical"
                 android:paddingLeft="24dp"
@@ -43,63 +51,11 @@
                 <!-- Password Label -->
 
 
-                <ImageView
-                    android:id="@+id/imageView16"
-                    android:layout_width="210dp"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_weight="0.02"
-                    app:srcCompat="@drawable/logo" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="12dp">
-
-                    <Switch
-                        android:id="@+id/switch4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:showText="true"
-                        android:text=""
-                        android:textOff="eng"
-                        android:textOn="mm" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginBottom="24dp"
-                    android:layout_marginTop="24dp"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="JobReady365"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="81dp" />
-
-                </LinearLayout>
-
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="418dp"
                     android:layout_marginBottom="24dp"
-                    android:layout_weight="0.21"
                     android:text="@string/policy"
                     tools:layout_editor_absoluteX="8dp"
                     tools:layout_editor_absoluteY="8dp" />
@@ -107,8 +63,9 @@
                 <Button
                     android:id="@+id/btn_next"
                     style="@style/AppTheme"
-                    android:layout_width="match_parent"
+                    android:layout_width="177dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
                     android:layout_marginBottom="20dp"
                     android:text="@string/btn_agree"
                     android:textColor="@color/colorAccent" />

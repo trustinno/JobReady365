@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.goldenictsolutions.win.jobready365_">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,15 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Employee.JPolicy"
             android:label="@string/title_activity_jpolicy"
@@ -28,12 +20,17 @@
         <activity
             android:name=".Employee.JSignUpActivity"
             android:label="@string/title_activity_jsign_up"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Employee.JLoginActivity"
             android:label="@string/title_activity_jlogin"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".employer.Emprcompro"
             android:label="CompanyProfile"
@@ -41,6 +38,10 @@
         <activity
             android:name=".employer.Emprjobpost"
             android:label="@string/title_activity_emprjobpost"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Employee.JResumeActivity"
+            android:label="@string/title_activity_jresume"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

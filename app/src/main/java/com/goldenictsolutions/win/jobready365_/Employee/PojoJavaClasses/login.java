@@ -5,11 +5,11 @@ package com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses;
  */
 
 public class login {
-    final String login_name;
+    final String telephone_no;
     final String password;
 
-    public login(String login_name, String password) {
-        this.login_name = login_name;
+    public login(String telephone_no, String password) {
+        this.telephone_no = telephone_no;
         this.password = password;
     }
 }

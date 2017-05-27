@@ -1,5 +1,5 @@
 <resources>
-
+    <string name="user_name">UserName <font color="red">*</font></string>
     <string name="title_activity_empr_company_pro">empr_company_pro</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -25,7 +25,7 @@
     <string name="login">login</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
 
-    <string name="user_name">UserName <font color="red">*</font></string>
+
     <string name="employer">Employer</string>
     <string name="employee">Employee</string>
 

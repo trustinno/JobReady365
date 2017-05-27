@@ -46,7 +46,7 @@ public class JPolicy extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(JPolicy.this,JSignUpActivity.class);
+                Intent intent = new Intent(JPolicy.this,JLoginActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
               //  LanguageHandler.changeLocale(getResources(), "my");

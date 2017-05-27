@@ -56,7 +56,7 @@ public interface Interface {
 
     @GET("/api/login")
     Call<ServerResponse> get(// @Query("method") String method
-                             @Query("login_name") String username,
+                             @Query("telephone_no") String username,
                              @Query("password") String password
     );
 

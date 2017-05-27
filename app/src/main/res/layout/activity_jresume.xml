@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.goldenictsolutions.win.jobready365_.Employee.JPolicy">
+    tools:context="com.goldenictsolutions.win.jobready365_.Employee.JResumeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -12,15 +12,16 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="@color/colorProjectDark"
+            android:weightSum="1"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -37,25 +38,19 @@
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-
-                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="4dp"
-                    android:gravity="right"
-                    android:text="Policy &amp; Agreement"
+                    android:gravity="end"
+                    android:text="CURRICULUM VITAE"
                     android:textAlignment="gravity"
+
+
                     android:textSize="20dp" />
-
             </RelativeLayout>
-
-
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_jpolicy"
-        android:layout_height="560dp" />
+    <include layout="@layout/content_jresume" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
