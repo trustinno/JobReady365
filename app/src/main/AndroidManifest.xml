@@ -19,18 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
-            android:name=".JPolicy"
-            android:label=""
+            android:name=".Employee.JPolicy"
+            android:label="@string/title_activity_jpolicy"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".JSignUpActivity"
-            android:label=""
+            android:name=".Employee.JSignUpActivity"
+            android:label="@string/title_activity_jsign_up"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".JResumeActivity"
-            android:label=""
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".Employee.JLoginActivity"
+            android:label="@string/title_activity_jlogin"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity
             android:name=".employer.Emprcompro"
             android:label="CompanyProfile"

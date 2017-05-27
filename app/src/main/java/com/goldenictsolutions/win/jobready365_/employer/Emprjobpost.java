@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.goldenictsolutions.win.jobready365_.JPolicy;
 import com.goldenictsolutions.win.jobready365_.R;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
