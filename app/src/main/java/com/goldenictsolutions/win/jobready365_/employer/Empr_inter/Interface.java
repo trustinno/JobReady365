@@ -56,8 +56,16 @@ public interface Interface {
             @Query("id") int bus_id,
             @Query("jobindustry")String jobindustry);
 
+
+    @GET("api/category")
+    Call<Empr_Server_Response>getjobcategory(
+            @Query("id")int jocat_id,
+            @Query("category")String jobcate
+    );
+
     @POST("api/company")
     Call<Empr_Server_Response> post(@Body empr_company empr_company);
+
 //
 //    @POST("api/company/{user_id}")
 //    Call<Empr_Server_Response>usepost(@Path("user_id")String user_id, @Body Empr_compro empr_compro);

@@ -90,28 +90,30 @@ public class Emprcompro extends AppCompatActivity {
                 Sptownship sptownship=new Sptownship();
                 Spbustype spbustype=new Spbustype();
 
+//
+//                user_id="2388d1e90e8f4a37a657c42dc6cc30af";
+//                job_industry=spbustype.getbustypeid();
+//                logo="";
+//                website="";
+//                citys=spcity.getCityid();
+//                township=sptownship.getTownshipid();
+//                company_name=cname.getText().toString();
+//                address=cadd.getText().toString();
+//                email=cemail.getText().toString();
+//                mobile_no=Integer.parseInt(ctel.getText().toString());
+//                description=cdesc.getText().toString();
+//                primary_contact_person=cpri_conp.getText().toString();
+//                secondary_contact_person=csec_conp.getText().toString();
+//                primary_mobile=Integer.parseInt(cpri_conm.getText().toString());
+//                secondary_mobile=Integer.parseInt(csec_conm.getText().toString());
+//
+//
+//                postcom(user_id,company_name,logo,address,township,job_industry,citys,mobile_no,email,website,description,primary_contact_person,primary_mobile,secondary_contact_person,secondary_mobile);
+//
+//            Toast.makeText(getApplicationContext(),String.valueOf(township),Toast.LENGTH_LONG).show();
 
-                user_id="2388d1e90e8f4a37a657c42dc6cc30af";
-                job_industry=spbustype.getbustypeid();
-                logo="";
-                website="";
-                citys=spcity.getCityid();
-                township=sptownship.getTownshipid();
-                company_name=cname.getText().toString();
-                address=cadd.getText().toString();
-                email=cemail.getText().toString();
-                mobile_no=Integer.parseInt(ctel.getText().toString());
-                description=cdesc.getText().toString();
-                primary_contact_person=cpri_conp.getText().toString();
-                secondary_contact_person=csec_conp.getText().toString();
-                primary_mobile=Integer.parseInt(cpri_conm.getText().toString());
-                secondary_mobile=Integer.parseInt(csec_conm.getText().toString());
-
-
-                postcom(user_id,company_name,logo,address,township,job_industry,citys,mobile_no,email,website,description,primary_contact_person,primary_mobile,secondary_contact_person,secondary_mobile);
-
-            Toast.makeText(getApplicationContext(),String.valueOf(township),Toast.LENGTH_LONG).show();
-
+                Intent intent=new Intent(Emprcompro.this,Emprjobpost.class);
+                startActivity(intent);
 
             }
         });
