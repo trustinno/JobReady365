@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,11 +22,13 @@ import com.goldenictsolutions.win.jobready365_.JPolicy;
 import com.goldenictsolutions.win.jobready365_.R;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Busprovider;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Serverevent;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerJobcate;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerTownship;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnercity;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.TotheCloud;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
@@ -64,13 +67,14 @@ public class Emprjobpost extends AppCompatActivity {
         int jobcate_id = 0;
         final String jobcate = "";
         final String city = "";
-//        postjobcate(jobcate_id, jobcate);
+              postjobcate(jobcate_id, jobcate);
               postcitysp(city_id_sp, city);
 
         ///////////////////////////
         spcityspinnersp();
         ///sptownshipspinnersp();
         // spbustypespinnersp();
+
 
         ////////////////////////
 
@@ -121,7 +125,7 @@ public class Emprjobpost extends AppCompatActivity {
         if (empr_checks !=null)
         {
 
-            //         toemp();
+                     toemp();
         }
         else {
             gobacktocompro();
@@ -156,7 +160,7 @@ public class Emprjobpost extends AppCompatActivity {
         }
 
         public void postjobcate(int jobcate_id, String jobcate) {
-            //totheCloud.getjobcate(jobcate_id, jobcate);
+            totheCloud.getjobcate(jobcate_id, jobcate);
         }
 
 
@@ -210,36 +214,44 @@ public class Emprjobpost extends AppCompatActivity {
     }
     ////////////////////// END ////////////////////////////
 
-//    ////////////////////JOBCATEGORY SPINNER///////////////////////
-//    @Subscribe
-//    public void onServeerEvent(ServerEventSpinnerJobcate serverEventSpinnerJobcate) {
-//
-//        if (!serverEventSpinnerJobcate.getServerResponse().equals(null)) {
-//
-//            List<Empr_jobcate> jobcates = serverEventSpinnerJobcate.getServerResponse().getEmpr_jobcates();
-//            for (int i = 0; i < jobcates.size(); i++)
-//
-//            {
-//
-//
-//                spjobcateid.add(jobcates.get(i).getjobcatid());
-//                spjobcate.add(jobcates.get(i).getCategory());
-//            }
-//            spjobcate_jobpost = (Spinner) findViewById(R.id.empr_spjobcate);
-//            spjobcate_adp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spjobcate);
-//            spjobcate_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//            spjobcate_jobpost.setAdapter(spjobcate_adp);
-//        }
-//        else if (serverEventSpinnerJobcate.getServerResponse().equals(null))
-//        {
-//            String [] spbusplaceholder = {"CONNECTION ERROR","Don't scroll Connect the internet"};
-//            spjobcate_jobpost = (Spinner) findViewById(R.id.empr_business_type);
-//            spjobcate_adp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spbusplaceholder);
-//            spjobcate_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//            spjobcate_jobpost.setAdapter(spjobcate_adp);
-//        }
-//    }
-//
+
+    ////////////////////JOBCATEGORY SPINNER///////////////////////
+    public String stripHtmlTags(String html) {
+        return Html.fromHtml(html).toString();
+    }
+
+    @Subscribe
+    public void onServeerEvent(ServerEventSpinnerJobcate serverEventSpinnerJobcate) {
+
+        if (!serverEventSpinnerJobcate.getServerResponse().equals(null)) {
+
+            List<Empr_jobcate> jobcates = serverEventSpinnerJobcate.getServerResponse().getEmpr_jobcates();
+            for (int i = 0; i < jobcates.size(); i++)
+
+            {
+
+
+                spjobcate = (List) Html.fromHtml(String.valueOf((spjobcate)));
+
+
+                spjobcateid.add(jobcates.get(i).getjobcatid());
+                spjobcate.add(jobcates.get(i).getCategory());
+            }
+            spjobcate_jobpost = (Spinner) findViewById(R.id.empr_spjobcate);
+            spjobcate_adp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spjobcate);
+            spjobcate_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spjobcate_jobpost.setAdapter(spjobcate_adp);
+        }
+        else if (serverEventSpinnerJobcate.getServerResponse().equals(null))
+        {
+            String [] spbusplaceholder = {"CONNECTION ERROR","Don't scroll Connect the internet"};
+            spjobcate_jobpost = (Spinner) findViewById(R.id.empr_business_type);
+            spjobcate_adp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spbusplaceholder);
+            spjobcate_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spjobcate_jobpost.setAdapter(spjobcate_adp);
+        }
+    }
+
 
 
     public void toemp(){

@@ -6,8 +6,8 @@ package com.goldenictsolutions.win.jobready365_.employer.Empr_Server;
 public class ServerEventSpinnerBustype {
     private Empr_Server_Response serverResponse;
 
-    public ServerEventSpinnerBustype(Empr_Server_Response serverResponse) {
-        this.serverResponse = serverResponse;
+    public ServerEventSpinnerBustype(Empr_Server_Response empr_serverResponse) {
+        this.serverResponse = empr_serverResponse;
     }
 
     public Empr_Server_Response getServerResponse() {
