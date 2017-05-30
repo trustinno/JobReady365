@@ -19,7 +19,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.goldenictsolutions.win.jobready365_.JPolicy;
 import com.goldenictsolutions.win.jobready365_.R;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Busprovider;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Serverevent;
@@ -33,8 +32,6 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobT
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_switchva;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
@@ -105,13 +102,13 @@ public class Emprjobpost extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
-                    int accomod=1;
-                    empr_switchva.setAccomo(accomod);
+                    int grad=1;
+                    empr_switchva.setGra(grad);
                     Toast.makeText(getApplicationContext(),"switch graduated is on",Toast.LENGTH_LONG).show();
                 }
                 else {
-                    int accomod=0;
-                    empr_switchva.setAccomo(accomod);
+                    int grad=0;
+                    empr_switchva.setGra(grad);
                 }
             }
         });
@@ -122,9 +119,13 @@ public class Emprjobpost extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+                    int trasport=1;
+                    empr_switchva.setTran(trasport);
                     Toast.makeText(getApplicationContext(),"switch tarnsportation is on",Toast.LENGTH_LONG).show();
                 }
                 else {
+                    int trasport=0;
+                    empr_switchva.setTran(trasport);
 
                 }
             }
@@ -137,10 +138,14 @@ public class Emprjobpost extends AppCompatActivity {
                 if (isChecked)
                 {
 
+                    int accomod=1;
+                    empr_switchva.setAccomo(accomod);
+
                     Toast.makeText(getApplicationContext(),"switch accomodation is on",Toast.LENGTH_LONG).show();
                 }
                 else {
-
+                    int accomod=0;
+                    empr_switchva.setAccomo(accomod);
                 }
 
             }
@@ -152,11 +157,15 @@ public class Emprjobpost extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+                    int food=1;
+                    empr_switchva.setFod(food);
+
                     Toast.makeText(getApplicationContext(),"switch Food is on",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
-
+                    int food=0;
+                    empr_switchva.setFod(food);
                 }
 
             }
@@ -170,11 +179,14 @@ public class Emprjobpost extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+                    int singl=1;
+                    empr_switchva.setSing(singl);
                     Toast.makeText(getApplicationContext(),"switch FA is on",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
-
+                    int singl=0;
+                    empr_switchva.setSing(singl);
                 }
 
 
@@ -189,10 +201,15 @@ public class Emprjobpost extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
+                    int traning=1;
+                    empr_switchva.setTrain(traning);
                     Toast.makeText(getApplicationContext(),"switch trainning is on",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
+                    int traning=0;
+                    empr_switchva.setTrain(traning);
 
                 }
 

@@ -8,6 +8,9 @@ public class Empr_switchva {
     private  int gra;
     private  int accomo;
     private  int sing;
+    private int tran;
+    private int fod;
+    private int train;
 
     public void setGra(int grad){
         gra=grad;
@@ -22,12 +25,21 @@ public class Empr_switchva {
         sing=singl;
     }
 
+    public void setTran(int trasport)
+    {
+        tran=trasport;
+    }
 
+    public void setFod(int food)
+    {
+        fod=food;
+    }
 
+    public void setTrain(int traning )
+    {
+        train=traning;
 
-
-
-
+    }
 
 
 
@@ -42,6 +54,18 @@ public class Empr_switchva {
     public int getSing()
     {
         return sing;
+    }
+    public int getTran()
+    {
+        return tran;
+    }
+    public int getFod()
+    {
+        return fod;
+    }
+    public int getTrain()
+    {
+        return train;
     }
 
 }
