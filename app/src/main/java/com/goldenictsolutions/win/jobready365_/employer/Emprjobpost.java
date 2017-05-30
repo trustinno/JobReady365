@@ -32,6 +32,7 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_switchva;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.otto.Subscribe;
@@ -82,7 +83,7 @@ public class Emprjobpost extends AppCompatActivity {
         ///////////////////////////
         spcityspinnersp();
         sptownshipspinnersp();
-
+        spjobtype();
 
 
         ////////////////////////
@@ -98,12 +99,19 @@ public class Emprjobpost extends AppCompatActivity {
         ArrayAdapter spamount_adp=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,spamount);
         spamount_jobpost.setAdapter(spamount_adp);
 
+        final Empr_switchva empr_switchva=new Empr_switchva();
         grasw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+                    int accomod=1;
+                    empr_switchva.setAccomo(accomod);
                     Toast.makeText(getApplicationContext(),"switch graduated is on",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    int accomod=0;
+                    empr_switchva.setAccomo(accomod);
                 }
             }
         });
@@ -116,6 +124,9 @@ public class Emprjobpost extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"switch tarnsportation is on",Toast.LENGTH_LONG).show();
                 }
+                else {
+
+                }
             }
         });
 
@@ -125,8 +136,13 @@ public class Emprjobpost extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
+
                     Toast.makeText(getApplicationContext(),"switch accomodation is on",Toast.LENGTH_LONG).show();
                 }
+                else {
+
+                }
+
             }
         });
 
@@ -138,6 +154,11 @@ public class Emprjobpost extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"switch Food is on",Toast.LENGTH_LONG).show();
                 }
+                else
+                {
+
+                }
+
             }
         });
 
@@ -151,6 +172,12 @@ public class Emprjobpost extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"switch FA is on",Toast.LENGTH_LONG).show();
                 }
+                else
+                {
+
+                }
+
+
             }
         });
 
@@ -164,12 +191,18 @@ public class Emprjobpost extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(),"switch trainning is on",Toast.LENGTH_LONG).show();
                 }
+                else
+                {
+
+                }
+
+
             }
         });
 
 
 
-
+        ///////////////////////// SWITCH END ///////////////////////////////////
 
         editText=(TextView) findViewById(R.id.editquilifi);
         editText.setOnClickListener(new View.OnClickListener() {
@@ -224,8 +257,10 @@ public class Emprjobpost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Emprjobpost.this,Employer.class);
-                startActivity(intent);
+                int bla = empr_switchva.getAccomo();
+                    Toast.makeText(getApplicationContext(),String.valueOf(bla),Toast.LENGTH_LONG).show();
+//                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+//                startActivity(intent);
 
             }
         });
@@ -412,6 +447,9 @@ public class Emprjobpost extends AppCompatActivity {
 
 
 
+
+
+
     //////////////////////////////////////   SPINNER ON CLICK GET DATA //////////////////////////////////
 
 
@@ -481,6 +519,7 @@ public class Emprjobpost extends AppCompatActivity {
         }
     }
 
+
     /////////////////////////////////////////// END //////////////////////////////////////
 
     /////////////////////////////////// BUSINESS SPINNER ON CLICK ///////////////////////
@@ -521,12 +560,42 @@ public class Emprjobpost extends AppCompatActivity {
 
     //////////////////////////////// END ///////////////////////////////////////////////////////
 
+    /////////////////////////////// Spjobtype /////////////////////////////////////////////////
+        public void  spjobtype(){
+            spjobtype_jobpost=(Spinner)findViewById(R.id.empr_spjobtype);
+            spjobtype_jobpost.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    Object jobid=spbustypeid.get(position);
+                    int spjobtypeidsp =(int)jobid;
+                    Spjobtype spjobtype=new Spjobtype();
+                    spjobtype.setSpjobtypeid(spjobtypeidsp);
+                    Toast.makeText(getApplicationContext(),String.valueOf(spjobtypeidsp),Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+        }
 
 
+        public static class Spjobtype
+        {
+            private static int spjobtypeid;
 
+            public void setSpjobtypeid(int spjobtypeidsp){
+                spjobtypeid=spjobtypeidsp;
+            }
+            public int getSpjobtypeid()
+            {
+                return spjobtypeid;
+            }
 
+        }
 
-
+////////////////////////////// END /////////////////////////
 
 
 
@@ -577,3 +646,5 @@ public class Emprjobpost extends AppCompatActivity {
 
     }
 }
+
+    ///TODO Calendar Add and language skill make effect ,Qulification dialog to upgrate
