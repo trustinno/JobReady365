@@ -1,5 +1,6 @@
 package com.goldenictsolutions.win.jobready365_.employer.Empr_Server;
 
+import android.text.Html;
 import android.util.Log;
 
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_comprodata;
@@ -171,16 +172,16 @@ public class TotheCloud {
 
     }
 
-    public void getjobcate(int jobcate_id, String jobcate) {
+    public void getjobcate(int jocate_id, String jobcate) {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
        //Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 
-        Retrofit retrofit = new Retrofit.Builder()
+        final Retrofit retrofit = new Retrofit.Builder()
                 .client(httpClient.build())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .baseUrl(SERVER_URL)
                 .build();
         Interface service = retrofit.create(Interface.class);
@@ -190,7 +191,7 @@ public class TotheCloud {
         //Call<ServerResponse> call = service.post(username,password);
 
         //service.getjobcategory(), HttpHeaderParser.parseCharset(response.headers));
-        Call<Empr_Server_Response> call = service.getjobcategory(jobcate_id,jobcate);
+        Call<Empr_Server_Response> call = service.getjobcategory(jocate_id,jobcate);
         //Call<ServerResponse> call = service.post(username,password);
         call.enqueue(new Callback<Empr_Server_Response>() {
             @Override
@@ -198,9 +199,12 @@ public class TotheCloud {
                 Log.e(TAG, "Success" + response.code());
                 Log.e(TAG, "Success" + response.body());
                 Log.e(TAG, "Success" + response.message());
+
                 Empr_Busprovider.getBus().post( new ServerEventSpinnerJobcate(response.body()));
                 Log.e(TAG, "Success");
             }
+
+
 
             @Override
             public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
@@ -214,4 +218,52 @@ public class TotheCloud {
 
 
        }
+
+    public void getjobtype(int jobtp_id, String jobtp_type) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(logging);
+        //Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+
+        final Retrofit retrofit = new Retrofit.Builder()
+                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                .baseUrl(SERVER_URL)
+                .build();
+        Interface service = retrofit.create(Interface.class);
+
+
+        //Call<ServerResponse> call = service.post("login",username,password);
+        //Call<ServerResponse> call = service.post(username,password);
+
+        //service.getjobcategory(), HttpHeaderParser.parseCharset(response.headers));
+        Call<Empr_Server_Response> call = service.getjobtp(jobtp_id,jobtp_type);
+        //Call<ServerResponse> call = service.post(username,password);
+        call.enqueue(new Callback<Empr_Server_Response>() {
+            @Override
+            public void onResponse(Call<Empr_Server_Response> call, Response<Empr_Server_Response> response) {
+                Log.e(TAG, "Success" + response.code());
+                Log.e(TAG, "Success" + response.body());
+                Log.e(TAG, "Success" + response.message());
+                Empr_Busprovider.getBus().post( new ServerEventSpinnerJobtype(response.body()));
+                Log.e(TAG, "Success");
+            }
+
+
+
+            @Override
+            public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                Log.e(TAG, "Failure " + t.getMessage());
+                Empr_Busprovider.getBus().post(new Empr_Error_Event(-2, t.getMessage()));
+
+            }
+
+        });
+
+
+    }
+
+
 }

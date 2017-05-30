@@ -1,6 +1,7 @@
 package com.goldenictsolutions.win.jobready365_.employer.Empr_inter;
 
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Server_Response;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_comprodata;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_company;
 
@@ -61,6 +62,12 @@ public interface Interface {
     Call<Empr_Server_Response>getjobcategory(
             @Query("id")int jocat_id,
             @Query("category")String jobcate
+    );
+
+    @GET("api/type")
+    Call<Empr_Server_Response> getjobtp(
+            @Query("id")int jobtp_id,
+            @Query("type")String jobtp_type
     );
 
     @POST("api/company")

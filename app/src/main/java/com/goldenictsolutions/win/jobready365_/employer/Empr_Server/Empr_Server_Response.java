@@ -1,17 +1,15 @@
 package com.goldenictsolutions.win.jobready365_.employer.Empr_Server;
 
-import android.support.annotation.ArrayRes;
-
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Businesstype;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_company;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.annotations.Until;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zarni on 5/25/17.
@@ -33,13 +31,16 @@ public class Empr_Server_Response
     private ArrayList<Empr_Township>townships =null;
 
 
+    @SerializedName("jobtype")
+    private ArrayList<Empr_JobType>jobTypes=null;
 //
 
    @SerializedName("jobcategory")
-    private ArrayList<Empr_jobcate>empr_jobcates=null;
+    private ArrayList<Empr_jobcate> empr_jobcates=null;
 
   public ArrayList<Empr_jobcate>getEmpr_jobcates(){return empr_jobcates;}
 
+    public ArrayList<Empr_JobType>getJobTypes(){return jobTypes;}
 
     public ArrayList<empr_company>getEmpr_companies()
     {return empr_companies;}

@@ -12,9 +12,10 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,12 +24,16 @@ import com.goldenictsolutions.win.jobready365_.R;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Busprovider;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Serverevent;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerJobcate;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerJobtype;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerTownship;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnercity;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.TotheCloud;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
@@ -40,7 +45,7 @@ public class Emprjobpost extends AppCompatActivity {
     TextView editText;
     Button diaglogbutton,diaglogbuttoncancle,dialgoyes,dialogno;
     Dialog dialog,backdialog;
-    Spinner spcity_jobpost,sptownship_jobpost,spjobtype_jobpost,spjobcate_jobpost;
+    Spinner spcity_jobpost,sptownship_jobpost,spjobtype_jobpost,spjobcate_jobpost,spamount_jobpost;
     ArrayAdapter spcity_adp,sptownship_adp,spjobtype_adp,spjobcate_adp;
     private List spcityid = new ArrayList<>();
     private List spcity = new ArrayList<>();
@@ -51,9 +56,11 @@ public class Emprjobpost extends AppCompatActivity {
     private List spjobcateid =new ArrayList<>();
     private List spjobcate=new ArrayList<>();
 
-
+    String [] spamount = {"Negotiate","Less than 100000 Ks","100000 ~ 300000 Ks","300000 ~ 500000","500000 ~ 1000000","Greater than 1000000"};
+    Switch  accomosw,transw,grasw,singlesw,foodsw,trainsw;
     //    String empr_checks;
     TotheCloud totheCloud;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,21 +71,101 @@ public class Emprjobpost extends AppCompatActivity {
 
         totheCloud=new TotheCloud();
         final int city_id_sp = 0;
-        int jobcate_id = 0;
+        int jocate_id = 0;
+        int jobtp_id=0;
+        String jobtp_type="";
         final String jobcate = "";
         final String city = "";
-              postjobcate(jobcate_id, jobcate);
-              postcitysp(city_id_sp, city);
-
+        postjobcate(jocate_id, jobcate);
+        postcitysp(city_id_sp, city);
+        postjobtype(jobtp_id,jobtp_type);
         ///////////////////////////
         spcityspinnersp();
-        ///sptownshipspinnersp();
-        // spbustypespinnersp();
+        sptownshipspinnersp();
+
 
 
         ////////////////////////
 
+        grasw=(Switch)findViewById(R.id.empr_gra_sw);
+        transw=(Switch)findViewById(R.id.empr_tran_sw);
+        accomosw=(Switch)findViewById(R.id.empr_accomo_sw);
+        singlesw=(Switch)findViewById(R.id.empr_single_sw);
+        foodsw=(Switch)findViewById(R.id.empr_food_sw);
+        trainsw=(Switch)findViewById(R.id.empr_tran_sw);
 
+        spamount_jobpost=(Spinner)findViewById(R.id.empr_sallary);
+        ArrayAdapter spamount_adp=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,spamount);
+        spamount_jobpost.setAdapter(spamount_adp);
+
+        grasw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Toast.makeText(getApplicationContext(),"switch graduated is on",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+        transw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Toast.makeText(getApplicationContext(),"switch tarnsportation is on",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+        accomosw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Toast.makeText(getApplicationContext(),"switch accomodation is on",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+        foodsw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Toast.makeText(getApplicationContext(),"switch Food is on",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+
+
+        singlesw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Toast.makeText(getApplicationContext(),"switch FA is on",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
+
+
+        trainsw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                {
+                    Toast.makeText(getApplicationContext(),"switch trainning is on",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
 
 
@@ -155,12 +242,16 @@ public class Emprjobpost extends AppCompatActivity {
             totheCloud.getspcity(city_id_sp, city);
         }
 
+        public void  postjobtype(int jobtp_id,String jobtp_type){
+            totheCloud.getjobtype(jobtp_id,jobtp_type);
+        }
+
         public void posttownshipsp(int spcity_id) {
             totheCloud.gettownship(spcity_id);
         }
 
-        public void postjobcate(int jobcate_id, String jobcate) {
-            totheCloud.getjobcate(jobcate_id, jobcate);
+        public void postjobcate(int jocate_id, String jobcate) {
+            totheCloud.getjobcate(jocate_id, jobcate);
         }
 
 
@@ -215,25 +306,55 @@ public class Emprjobpost extends AppCompatActivity {
     ////////////////////// END ////////////////////////////
 
 
-    ////////////////////JOBCATEGORY SPINNER///////////////////////
-    public String stripHtmlTags(String html) {
-        return Html.fromHtml(html).toString();
-    }
+    ////////////////////// AMOUT ////////////////////////////////
 
+
+
+
+
+
+    //////////////////////  END /////////////////////////////////
+
+
+    ///////////////////////  JOBTYPE    ///////////////////////////////
+    @Subscribe
+    public void onServeerEvent(ServerEventSpinnerJobtype serverEventSpinnerJobtype) {
+
+        if (!serverEventSpinnerJobtype.getServerResponse().equals(null)) {
+//            sptownshipid.clear();
+//            sptownship.clear();
+
+            List<Empr_JobType> jobTypes = serverEventSpinnerJobtype.getServerResponse().getJobTypes();
+            for (int i = 0; i < jobTypes.size(); i++)
+
+            {
+
+
+                spbustypeid.add(jobTypes.get(i).gettypeid());
+                spbustype.add(jobTypes.get(i).gettypes());
+            }
+            spjobtype_jobpost = (Spinner) findViewById(R.id.empr_spjobtype);
+            spjobtype_adp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, spbustype);
+            spjobtype_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spjobtype_jobpost.setAdapter(spjobtype_adp);
+        }
+    }
+    ///////////////////////    END //////////////////////////////
+
+    ////////////////////JOBCATEGORY SPINNER///////////////////////
     @Subscribe
     public void onServeerEvent(ServerEventSpinnerJobcate serverEventSpinnerJobcate) {
 
         if (!serverEventSpinnerJobcate.getServerResponse().equals(null)) {
 
-            List<Empr_jobcate> jobcates = serverEventSpinnerJobcate.getServerResponse().getEmpr_jobcates();
-            for (int i = 0; i < jobcates.size(); i++)
 
+
+            List<Empr_jobcate> jobcates =serverEventSpinnerJobcate.getServerResponse().getEmpr_jobcates();
+            for (int i = 0; i < jobcates.size(); i++)
             {
 
 
-                spjobcate = (List) Html.fromHtml(String.valueOf((spjobcate)));
-
-
+                //spjobcate = (List) Html.fromHtml(String.valueOf((spjobcate)));
                 spjobcateid.add(jobcates.get(i).getjobcatid());
                 spjobcate.add(jobcates.get(i).getCategory());
             }
@@ -364,25 +485,26 @@ public class Emprjobpost extends AppCompatActivity {
 
     /////////////////////////////////// BUSINESS SPINNER ON CLICK ///////////////////////
 
-//    public void spbustypespinner() {
-//        spinner3 = (Spinner) findViewById(R.id.empr_business_type);
-//        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Object busid = spbustypeid.get(position);
-//
-//                int bustype_id = (int) busid;
-//                Emprcompro.Spbustype spbustype = new Emprcompro.Spbustype();
-//                spbustype.setbistypeid(bustype_id);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//
-//            }
-//        });
+    public void spjobcategory() {
+        spjobcate_jobpost  = (Spinner) findViewById(R.id.empr_spjobcate);
+        spjobcate_jobpost.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Object busid = spbustypeid.get(position);
 
-//    }
+                int jocacateidsp = (int) busid;
+                Emprcompro.Spbustype spbustype = new Emprcompro.Spbustype();
+                spbustype.setbistypeid(jocacateidsp);
+                Toast.makeText(getApplicationContext(),jocacateidsp,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+    }
 
     public static class Spjobcate {
         private static int jocacateid;
@@ -391,12 +513,21 @@ public class Emprjobpost extends AppCompatActivity {
             jocacateid =jocacateidsp;
         }
 
+
         public int getJocacateidsp() {
             return jocacateid;
         }
     }
 
     //////////////////////////////// END ///////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
 
 
 
