@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.goldenictsolutions.win.jobready365_.R;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Busprovider;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Error_Event;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Serverevent;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerJobcate;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventSpinnerJobtype;
@@ -41,8 +42,11 @@ import java.util.List;
 public class Emprjobpost extends AppCompatActivity {
     EditText editTextdialog;
     TextView editText;
+
+    String empr_cname;
     Button diaglogbutton,diaglogbuttoncancle,dialgoyes,dialogno;
     Dialog dialog,backdialog;
+    TextView empr_cname_jpo;
     Spinner spcity_jobpost,sptownship_jobpost,spjobtype_jobpost,spjobcate_jobpost,spamount_jobpost;
     ArrayAdapter spcity_adp,sptownship_adp,spjobtype_adp,spjobcate_adp;
     private List spcityid = new ArrayList<>();
@@ -68,6 +72,9 @@ public class Emprjobpost extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         totheCloud=new TotheCloud();
+
+
+
         final int city_id_sp = 0;
         int jocate_id = 0;
         int jobtp_id=0;
@@ -84,6 +91,11 @@ public class Emprjobpost extends AppCompatActivity {
 
 
         ////////////////////////
+
+        Bundle extra=getIntent().getExtras();
+        empr_cname=extra.getString("comnaem");
+        empr_cname_jpo=(TextView)findViewById(R.id.emr_jobpo_cname);
+        empr_cname_jpo.setText(empr_cname);
 
         grasw=(Switch)findViewById(R.id.empr_gra_sw);
         transw=(Switch)findViewById(R.id.empr_tran_sw);
@@ -615,7 +627,10 @@ public class Emprjobpost extends AppCompatActivity {
 ////////////////////////////// END /////////////////////////
 
 
-
+    @Subscribe
+    public void onErrorEvent(Empr_Error_Event errorEvent) {
+        Toast.makeText(this, "onErrorEvent fail " + errorEvent.getErrorMsg(), Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onResume() {

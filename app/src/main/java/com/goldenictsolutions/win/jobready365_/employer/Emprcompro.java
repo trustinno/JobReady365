@@ -112,7 +112,10 @@ public class Emprcompro extends AppCompatActivity {
 //
 //            Toast.makeText(getApplicationContext(),String.valueOf(township),Toast.LENGTH_LONG).show();
 
+
+                String companyname="Google";
                 Intent intent=new Intent(Emprcompro.this,Emprjobpost.class);
+                intent.putExtra("comnaem",companyname);
                 startActivity(intent);
 
             }
@@ -273,6 +276,9 @@ public class Emprcompro extends AppCompatActivity {
         }
     }
     ///////////////////////////////////// END ////////////////////////////////////////////////
+
+
+
 
 
     ///////////////////////////////  TOWINSHIP ONCLICK GET DATA //////////////////////////////
