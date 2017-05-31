@@ -26,7 +26,7 @@ public class EmprDashboard extends Fragment {
 Button addcomp_pro,dash_edit,dash_view,dash_add;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_empr_dashboard, container, false);
@@ -55,7 +55,9 @@ final        FragmentManager fragmentManager = getFragmentManager();
         dash_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String addto="1";
                 Intent intent=new Intent(getActivity(),Emprcompro.class);
+                intent.putExtra("fromdash",addto);
                 startActivity(intent);
             }
         });

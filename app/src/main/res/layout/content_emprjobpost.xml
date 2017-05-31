@@ -304,6 +304,16 @@
                             android:textAppearance="?android:textAppearanceMedium"
                             android:hint="State/Division"
                             android:textColorHint="#05ab9a"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:maxLines="1"
+                            android:hint="Address"
+                            android:id="@+id/empr_jpo_address"
+                            android:paddingLeft="@dimen/empr_between_layout"
+                            android:layout_marginLeft="@dimen/empr_between_layout"
+                            android:background="@drawable/border"
+                            />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -486,29 +496,29 @@
                 </LinearLayout>
 
 
-                <!--<LinearLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="horizontal"-->
-                    <!--android:paddingBottom="10dp">-->
-                    <!--<ImageView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:paddingRight="5dp"-->
-                        <!--android:src="@drawable/ic_empr_coabout" />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/ic_empr_coabout" />
 
 
-                    <!--<EditText-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="45dp"-->
-                        <!--android:maxLines="3"-->
-                        <!--android:layout_marginLeft="10dp"-->
-                        <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
-                        <!--android:hint="Working Experience"-->
-                        <!--android:background="@drawable/border"-->
-                        <!--/>-->
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:maxLines="3"
+                        android:layout_marginLeft="10dp"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:hint="Description"
+                        android:background="@drawable/border"
+                        />
 
-                <!--</LinearLayout>-->
+                </LinearLayout>
 
 
 

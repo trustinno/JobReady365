@@ -326,6 +326,29 @@
                     android:background="@drawable/ic_next_page"
                     android:id="@+id/gotopost"
                     />
+
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:text="Save"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorback"
+                    android:id="@+id/empr_dash_compost_save"
+                    android:visibility="invisible"
+                    />
+
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:text="Back"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/colorback"
+                    android:id="@+id/empr_dash_compost_back"
+                    android:visibility="invisible"
+                    />
+
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

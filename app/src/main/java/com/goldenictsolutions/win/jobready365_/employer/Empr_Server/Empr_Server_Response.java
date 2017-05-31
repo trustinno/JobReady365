@@ -38,7 +38,15 @@ public class Empr_Server_Response
    @SerializedName("jobcategory")
     private ArrayList<Empr_jobcate> empr_jobcates=null;
 
-  public ArrayList<Empr_jobcate>getEmpr_jobcates(){return empr_jobcates;}
+
+
+
+
+
+
+    //@SerializedName("")
+
+    public ArrayList<Empr_jobcate>getEmpr_jobcates(){return empr_jobcates;}
 
     public ArrayList<Empr_JobType>getJobTypes(){return jobTypes;}
 
@@ -54,5 +62,7 @@ public class Empr_Server_Response
     public ArrayList<Empr_Township>getTownships(){
         return townships;
     }
+
+
 
 }

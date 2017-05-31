@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_comprodata;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_company;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_postjob;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_inter.Interface;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -264,6 +265,54 @@ public class TotheCloud {
 
 
     }
+
+
+    public void postjob(String User_id,String Company_id,String Contact_info,int Township,int
+            myoo,int Job_nature,int Job_category,String Job_title,int Salary_range,String Summary,String Description,String Requirement,String Language_skill,
+                        int Accomodation,int Single,int Food_supply,int Ferry_supply, int Male,int Female,int Unisex,int Min_age,int Max_age) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(logging);
+        //Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+
+        final Retrofit retrofit = new Retrofit.Builder()
+                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create(new Gson()))
+                .baseUrl(SERVER_URL)
+                .build();
+        Interface service = retrofit.create(Interface.class);
+
+
+        //Call<ServerResponse> call = service.post("login",username,password);
+        //Call<ServerResponse> call = service.post(username,password);
+
+        //service.getjobcategory(), HttpHeaderParser.parseCharset(response.headers));
+        Call<Empr_Server_Response> call = service.postjob(new empr_postjob(User_id,Company_id,Contact_info,Township,myoo,Job_nature,Job_category,Job_title,Salary_range,Summary,Description,Requirement,Language_skill
+        ,Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Min_age,Max_age));
+        //Call<ServerResponse> call = service.post(username,password);
+        call.enqueue(new Callback<Empr_Server_Response>() {
+            @Override
+            public void onResponse(Call<Empr_Server_Response> call, Response<Empr_Server_Response> response) {
+                Log.e(TAG, "Success" + response.code());
+                Log.e(TAG, "Success" + response.body());
+                Log.e(TAG, "Success" + response.message());
+                Empr_Busprovider.getBus().post( new Empr_Serverevent(response.body()));
+                Log.e(TAG, "Success");
+            }
+            @Override
+            public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
+                // handle execution failures like no internet connectivity
+                Log.e(TAG, "Failure " + t.getMessage());
+                Empr_Busprovider.getBus().post(new Empr_Error_Event(-2, t.getMessage()));
+
+            }
+
+        });
+
+
+    }
+
 
 
 }

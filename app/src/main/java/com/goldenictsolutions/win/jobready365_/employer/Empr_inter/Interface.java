@@ -4,6 +4,7 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Server_
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_comprodata;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_company;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_postjob;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -72,6 +73,11 @@ public interface Interface {
 
     @POST("api/company")
     Call<Empr_Server_Response> post(@Body empr_company empr_company);
+
+    @POST("api/job")
+    Call<Empr_Server_Response>postjob(@Body empr_postjob empr_postjob);
+
+
 
 //
 //    @POST("api/company/{user_id}")

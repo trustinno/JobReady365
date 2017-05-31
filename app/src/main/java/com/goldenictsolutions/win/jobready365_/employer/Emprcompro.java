@@ -43,6 +43,7 @@ public class Emprcompro extends AppCompatActivity {
     private List sptownship = new ArrayList<>();
     private List spbustype = new ArrayList<>();
     private List spbustypeid = new ArrayList<>();
+    private Button  empr_compro_save,empr_compro_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +51,17 @@ public class Emprcompro extends AppCompatActivity {
         setContentView(R.layout.activity_empr_comp_pro);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         totheCloud = new TotheCloud();
         ///////////////////////////////////////////
+
         final int city_id_sp = 0;
         int bus_id = 0;
         final String jobindustry = "";
         final String city = "";
+
         postbustype(bus_id, jobindustry);
         postcity(city_id_sp, city);
+
 
         ///////////////////////////
         spcityspinner();
@@ -77,10 +79,48 @@ public class Emprcompro extends AppCompatActivity {
         csec_conp = (EditText) findViewById(R.id.empr_compro_secp);
         csec_conm = (EditText) findViewById(R.id.empr_compro_sectel);
         cpri_conm = (EditText) findViewById(R.id.empr_compro_pritel);
+
+
+
+        Button buttontopost = (Button) findViewById(R.id.gotopost);
+
 //
 
-        Button button = (Button) findViewById(R.id.gotopost);
-        button.setOnClickListener(new View.OnClickListener() {
+final String formdashadd =getIntent().getStringExtra("fromdash");
+            if (formdashadd !=null)
+            {
+
+                    buttontopost.setVisibility(View.INVISIBLE);
+                empr_compro_back=(Button)findViewById(R.id.empr_dash_compost_back);
+                empr_compro_back.setVisibility(View.VISIBLE);
+                empr_compro_save=(Button)findViewById(R.id.empr_dash_compost_save);
+                empr_compro_save.setVisibility(View.VISIBLE);
+                empr_compro_save.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //Intent intent=new Intent(Emprcompro.this,Employer.class);
+                        //startActivity(intent);
+                    }
+
+
+                });
+                Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_LONG).show();
+                    empr_compro_back.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent=new Intent(Emprcompro.this,Employer.class);
+                            startActivity(intent);
+                        }
+                    });
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(),"0",Toast.LENGTH_LONG).show();
+            }
+
+
+
+             buttontopost.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
@@ -144,7 +184,6 @@ public class Emprcompro extends AppCompatActivity {
         totheCloud.postcompro(user_id,company_name,logo,address,township,job_industry,citys,mobile_no,email,website,description,
                 primary_contact_person,primary_mobile,secondary_contact_person,secondary_mobile);
     }
-
 
 
 

@@ -43,7 +43,8 @@ public class Emprjobpost extends AppCompatActivity {
     EditText editTextdialog;
     TextView editText;
 
-    String empr_cname;
+    String empr_cname,User_id,Company_id,Contact_info,Summary,Description,Requirement,Language_skill,Job_title;
+    int   Township,myoo,Job_nature,Job_category,Salary_range, Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Min_age,Max_age;
     Button diaglogbutton,diaglogbuttoncancle,dialgoyes,dialogno;
     Dialog dialog,backdialog;
     TextView empr_cname_jpo;
@@ -270,6 +271,7 @@ public class Emprjobpost extends AppCompatActivity {
 
             }
         });
+
         final String empr_checks=getIntent().getStringExtra("conbackjopen");
         if (empr_checks !=null)
         {
@@ -286,10 +288,38 @@ public class Emprjobpost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+//                User_id="2388d1e90e8f4a37a657c42dc6cc30af";
+//                Company_id="ef000f70ba1e422e8bc073c5cc27e026";
+//                Contact_info="";
+//                Township=1;
+//                myoo=1;
+//                Job_nature=1;
+//                Job_category=2;
+//                Job_title="";
+//                Salary_range=1;
+//                Summary="";
+//                Description="";
+//                Requirement="";
+//                Language_skill="";
+//                Accomodation=1;
+//                Single=0;
+//                Food_supply=1;
+//                Ferry_supply=1;
+//                Male=0;
+//                Female=0;
+//                Unisex=3;
+//                Max_age=22;
+//                Min_age=34;
+//
+//
+//                postjob(User_id,Company_id,Contact_info,Township,myoo,Job_nature,Job_category,Job_title,Salary_range,Summary,Description
+//                ,Requirement,Language_skill,Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Max_age,Min_age);
+//
+
                 int bla = empr_switchva.getAccomo();
-                    Toast.makeText(getApplicationContext(),String.valueOf(bla),Toast.LENGTH_LONG).show();
-//                Intent intent=new Intent(Emprjobpost.this,Employer.class);
-//                startActivity(intent);
+                Toast.makeText(getApplicationContext(),String.valueOf(bla),Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+                startActivity(intent);
 
             }
         });
@@ -318,7 +348,13 @@ public class Emprjobpost extends AppCompatActivity {
             totheCloud.getjobcate(jocate_id, jobcate);
         }
 
-
+        public void  postjob(String User_id,String Company_id,String Contact_info,int Township,int
+                myoo,int Job_nature,int Job_category,String Job_title,int Salary_range,String Summary,String Description,String Requirement,String Language_skill,
+                             int Accomodation,int Single,int Food_supply,int Ferry_supply, int Male,int Female,int Unisex,int Min_age,int Max_age)
+        {
+            totheCloud.postjob(User_id,Company_id,Contact_info,Township,myoo,Job_nature,Job_category,Job_title,Salary_range,Summary,Description,Requirement,Language_skill
+                    ,Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Min_age,Max_age);
+        }
 
 
 
