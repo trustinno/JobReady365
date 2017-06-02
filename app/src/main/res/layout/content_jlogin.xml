@@ -104,13 +104,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
-
+<!--
                         <RadioButton
                             android:id="@+id/radioButton_employer"
                             style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                             android:layout_width="146dp"
                             android:layout_height="wrap_content"
                             android:text="@string/employer"
+                            android:onClick="onRadioButtonClicked"
                             android:textColor="@color/colorAccent" />
 
                         <RadioButton
@@ -118,8 +119,9 @@
                             android:layout_width="141dp"
                             android:layout_height="wrap_content"
                             android:text="@string/employee"
+                            android:onClick="onRadioButtonClicked"
                             android:textColor="@color/colorAccent" />
-
+    -->
                     </RadioGroup>
 
                 </LinearLayout>

@@ -9,8 +9,8 @@
     tools:showIn="@layout/activity_jresume">
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
         android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,6 +40,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="14dp"
+                    android:layout_weight="0.04"
                     android:orientation="horizontal"
                     android:weightSum="1">
 
@@ -48,6 +49,7 @@
                         android:layout_width="40dp"
                         android:layout_height="match_parent"
                         android:layout_marginRight="14dp"
+                        android:clickable="true"
 
                         app:srcCompat="@drawable/icon_and_button_01" />
 
@@ -57,9 +59,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="14dp"
-
                         android:background="@drawable/border_textview_small"
-                        android:hint="Take your photo"
+                        android:clickable="true"
+                        android:hint="@string/take_your_photo"
                         android:inputType="textPersonName" />
 
                 </LinearLayout>
@@ -67,10 +69,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="14dp"
                     android:layout_weight="0.04"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="8dp">
 
                     <ImageView
                         android:id="@+id/imageView3"
@@ -88,7 +90,7 @@
                         android:layout_marginTop="14dp"
 
                         android:background="@drawable/border_textview_small"
-                        android:hint="Full name"
+                        android:hint="@string/full_name"
                         android:inputType="textPersonName" />
                 </LinearLayout>
 
@@ -107,15 +109,44 @@
                         app:srcCompat="@drawable/icon_and_button_03" />
 
 
-                    <EditText
-                        android:id="@+id/editText_NRC_number"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="14dp"
                         android:background="@drawable/border_textview_small"
-                        android:hint="N.R.C Number"
-                        android:inputType="textPersonName" />
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Spinner
+                            android:id="@+id/spinner7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/border_textview_small"
+                            android:hint="(naing)" />
+
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="61dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/border_textview_small"
+
+                            android:hint="7/"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:layout_marginLeft="6dp"
+                            android:id="@+id/editText_NRC_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_textview_small"
+                            android:hint="@string/nrc_number"
+                            android:paddingLeft="12dp"
+                            android:textAlignment="center"
+                            android:inputType="textPersonName" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -133,17 +164,16 @@
                         android:layout_marginRight="14dp"
                         app:srcCompat="@drawable/icon_and_button_04" />
 
-                    <Spinner
-                        android:id="@+id/spinner"
+                    <TextView
+                        android:id="@+id/editText4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-
-                        android:ems="10"
-
-                        />
-
-                </LinearLayout>
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/border_textview_small"
+                        android:hint="@string/date_of_birth"
+                        android:inputType="textPersonName" />
+                    </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -166,7 +196,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="14dp"
                         android:background="@drawable/border_textview_small"
-                        android:hint="Father Name"
+                        android:hint="@string/father_name"
                         android:inputType="textPersonName" />
 
                 </LinearLayout>
@@ -192,7 +222,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="14dp"
                         android:background="@drawable/border_textview_small"
-                        android:hint="Nationality"
+                        android:hint="@string/nationality"
                         android:inputType="textPersonName" />
 
 
@@ -221,7 +251,7 @@
                         android:layout_marginTop="14dp"
                         android:layout_weight="0.01"
                         android:background="@drawable/border_textview_small"
-                        android:hint="Current Position" />
+                        android:hint="@string/current_position" />
 
 
                 </LinearLayout>
@@ -242,14 +272,14 @@
                         app:srcCompat="@drawable/icon_and_button_08" />
 
                     <Spinner
-                        android:id="@+id/spinner2"
+                        android:id="@+id/spinner_religion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="12dp"
 
-                        />
+                        android:background="@drawable/border_textview_small" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -266,11 +296,12 @@
                         app:srcCompat="@drawable/icon_and_button_09" />
 
                     <Spinner
-                        android:id="@+id/spinner3"
+                        android:id="@+id/spinner_marital_status"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:background="@drawable/border_textview_small" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -288,7 +319,10 @@
                         android:layout_weight="1"
                         android:text="Driving licence"
                         android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radioButton4"
                         android:layout_width="wrap_content"
@@ -301,6 +335,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.22"
                         android:text="no" />
+                    </RadioGroup>
 
                 </LinearLayout>
 
@@ -324,7 +359,7 @@
                         android:layout_marginTop="14dp"
 
                         android:background="@drawable/border_textview_small"
-                        android:hint="Contact Number"
+                        android:hint="@string/contact_number"
                         android:inputType="textPersonName" />
                     />
 
@@ -375,20 +410,22 @@
                         android:weightSum="1">
 
                         <Spinner
-                            android:id="@+id/spinner4"
+                            android:id="@+id/spinner_state_division"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:layout_marginRight="10dp"
-                            android:layout_weight="0.51" />
+                            android:layout_weight="0.51"
+                            android:background="@drawable/border_textview_small" />
 
                         <Spinner
-                            android:id="@+id/spinner5"
+                            android:id="@+id/spinner_township"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:layout_marginRight="10dp"
-                            android:layout_weight="0.23" />
+                            android:layout_weight="0.23"
+                            android:background="@drawable/border_textview_small" />
 
                         <EditText
                             android:id="@+id/editText7"
@@ -433,6 +470,7 @@
                             android:layout_width="294dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="10dp"
+                            android:background="@drawable/border_textview_small"
                             android:ems="10"
                             android:hint="Other Qualification / Certificate"
                             android:inputType="textPersonName" />
@@ -497,6 +535,7 @@
                             android:id="@+id/editText"
                             android:layout_width="294dp"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/border_textview_small"
                             android:ems="10"
                             android:hint="Working Experience"
                             android:inputType="textPersonName" />
@@ -566,6 +605,7 @@
                                 android:id="@+id/editText1"
                                 android:layout_width="294dp"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/border_textview_small"
                                 android:ems="10"
                                 android:hint="Education"
                                 android:inputType="textPersonName" />
@@ -702,7 +742,10 @@
 
                         android:layout_weight="1"
                         android:text="Hide CV from employer" />
-
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
                     <RadioButton
                         android:id="@+id/radioButton5"
                         android:layout_width="wrap_content"
@@ -718,6 +761,8 @@
                         android:layout_marginTop="12dp"
                         android:layout_weight="1"
                         android:text="no" />
+
+                    </RadioGroup>
                 </LinearLayout>
 
                 <Button
@@ -732,6 +777,8 @@
                     android:text="Submit" />
 
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

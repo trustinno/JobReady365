@@ -12,6 +12,13 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
 
 public interface Interface {
     @Headers({
@@ -30,15 +37,19 @@ public interface Interface {
             @Field("password") String password
     );*/
 
+    //@FormUrlEncoded
+    @POST("/api/register")
+    //Call<ServerResponse> post(@Body @Root("email") String email,@Root("password") String password);
+    Call<ServerResponse> postSignUp(@Body SignUp body);
+    //Call<ServerResponse> post(@Body login login);
+
     @POST("/api/getResult")
         //Call<ServerResponse> post(@Body @Root("email") String email,@Root("password") String password);
     Call<ServerResponse> postGetResult(@Body GetResult body, @Query("token") String apiKey);
     //Call<ServerResponse> post(@Body login login);
-   /* Call<ServerResponse> post(
-            //@Field("method") String method,
-            @Field("email") String username,
-            @Field("password") String password
-    );*/
+    @Multipart
+    @POST("api/upload.php")
+    Call<ServerResponse> uploadImage(@Part MultipartBody.Part file);
 
 //    @GET("/api/jobcat")
  //   Call<ServerResponse> getJobcat(@Query("token"), @Path("JobCategory"));
@@ -54,11 +65,6 @@ public interface Interface {
 
 
 
-    @GET("/api/login")
-    Call<ServerResponse> get(// @Query("method") String method
-                             @Query("telephone_no") String username,
-                             @Query("password") String password
-    );
 
   //  @POST("/api/getResult")
   //  Call<ServerResponse> getResult(@Query("") String);

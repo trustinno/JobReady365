@@ -56,4 +56,64 @@
     <string name="title_activity_jdashboard1">JDashboard1</string>
     <string name="title_activity_jdashboard_ok">JDashboardOk</string>
     <string name="title_activity_jappointment">JAppointment</string>
+
+    <string name="take_your_photo">Take your Photo<font color="red">*</font></string>
+    <string name="full_name">Full name <font color="red">*</font></string>
+    <string name="nrc_number">N.R.C Number <font color="red">*</font></string>
+    <string name="father_name">Father Name <font color="red">*</font></string>
+    <string name="nationality">Nationality <font color="red">*</font></string>
+    <string name="current_position">Current Position <font color="red">*</font></string>
+    <string name="date_of_birth">Date of Birth <font color="red">*</font></string>
+    <string name="title_activity_jupload">JUploadActivity</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="contact_number">Contact Number</string>
+    <string-array name="nrc_number">
+                <item>1/</item>
+                <item>2/</item>
+                <item>3/</item>
+                <item>4/</item>
+                <item>5/</item>
+                <item>6/</item>
+                <item>7/</item>     </string-array>
+
+    <string-array name="nrc_division_code">
+            <item>pa-kha-na(naing)</item>
+            <item>ya-kha_na(naing)</item>
+            <item>sa-kha-na(naing)</item>
+           </string-array>
+
+    <string-array name="spin_religion">
+                <item>Religion <font color="red">*</font></item>
+                <item>Buddhist</item>
+                <item>Christian</item>
+                <item>Islamic</item>
+                <item>Other</item>
+               </string-array>
+
+    <string-array name="spin_marital_status">
+                <item>Marital Status <font color="red">*</font></item>
+                <item>Single</item>
+                <item> Married</item>
+                <item>In Relationship</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="spin_state_division">
+        <item>State/Division <font color="red">*</font></item>
+        <item></item>
+                <item>Ayeyarwaddy</item>
+                <item>Yangon</item>
+                 <item>Ayeyarwaddy</item>
+                    <item>Bago</item>
+    </string-array>
+
+    <string-array name="spin_township">
+        <item>Township <font color="red">*</font></item>
+
+                <item>Township1</item>
+        <item>Township2</item>
+        <item>Township3</item>
+    </string-array>
+
+
 </resources>
