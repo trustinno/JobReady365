@@ -9,7 +9,7 @@
         android:endColor="#1adce1"
         android:startColor="#21efe5"
         android:angle="90"/>
-    />
+   
     <padding android:left="7dp"
         android:top="7dp"
         android:right="7dp"
