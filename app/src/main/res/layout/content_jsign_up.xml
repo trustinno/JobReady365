@@ -1,92 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  app:layout_behavior="@string/appbar_scrolling_view_behavior"
-  tools:context="com.goldenictsolutions.win.jobready365_.JSignUpActivity"
-  tools:showIn="@layout/activity_jsign_up">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.goldenictsolutions.win.jobready365_.Employee.JSignUpActivity"
+    tools:showIn="@layout/activity_jsign_up">
 
-
-  <ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
-
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:paddingLeft="24dp"
-      android:paddingRight="24dp"
-      android:paddingTop="56dp">
-
-      <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="72dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/logo" />
-
-      <!-- Email Label -->
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp">
-
-        <EditText
-          android:id="@+id/input_email"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Email"
-
-          android:inputType="textEmailAddress" />
-      </android.support.design.widget.TextInputLayout>
-
-      <!-- Password Label -->
-      <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp">
-
-        <EditText
-          android:id="@+id/input_password"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Password"
-
-          android:inputType="textPassword" />
-      </android.support.design.widget.TextInputLayout>
-
-      <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_login"
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorAccent"
-        android:padding="12dp"
-        android:text="Login" />
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true">
 
-      <TextView
-        android:id="@+id/link_signup"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:text="No account yet? Create one"
-        android:textColor="@color/colorAccent"
-        android:textSize="16dip" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border_textview"
+            android:orientation="vertical"
+            android:paddingBottom="50dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="24dp"
+            android:weightSum="1">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="@drawable/border_textview_small"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="56dp"
+                android:paddingBottom="69dp">
+
+                <!-- Email Label -->
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="24dp"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="14dp"
+                    android:text="Sign Up"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorAccent"
+
+                    android:textSize="18sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_button_sign_up_employee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.77"
+                            android:onClick="onRadioButtonClicked"
+                            android:checked="true"
+                            android:text="Employee" />
+
+
+                        android:textColor="@color/colorAccent" />
+
+                        <RadioButton
+                            android:id="@+id/radio_button_sign_up_employer"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.62"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Employer" />
+
+                        android:textColor="@color/colorAccent" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/input_email_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+
+                    android:background="@drawable/border_textview_gray"
+                    android:hint="09455553988"
+                    android:inputType="textEmailAddress" />
+
+
+                <!-- Password Label -->
+
+
+                <EditText
+                    android:id="@+id/input_password_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/border_textview_gray"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+
+
+                <EditText
+                    android:id="@+id/input_verify_password"
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+
+                    android:background="@drawable/border_textview_gray"
+                    android:hint="verify Password"
+                    android:inputType="textPassword" />
+
+
+                <Switch
+                    android:id="@+id/switch_auto_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text="Auto Login?"
+                    android:textColor="@color/colorAccent" />
+
+                <Button
+                    android:id="@+id/btn_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="Registration"
+                    android:textColor="@color/colorAccent" />
+
+                <!--  android:background="?attr/colorButtonNormal" android:padding="12dp" -->
+                <!--
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="gotoemployer"
-        android:id="@+id/gotoemp"/>
-    </LinearLayout>
-  </ScrollView>
+          android:id="@+id/link_signup"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="24dp"
+          android:gravity="center"
+          android:text="No account yet? Create one"
+          android:textColor="@color/colorAccent"
+          android:textSize="16dip" />
+
+          -->
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

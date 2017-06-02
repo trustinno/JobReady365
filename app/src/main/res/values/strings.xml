@@ -1,17 +1,119 @@
 <resources>
-    <string name="app_name">JobReady365_</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_jpolicy">JPolicy</string>
-  <string name="policy">Your use of the Service is subject to this Acceptable Use Policy.
-                If you are found to be in violation of our policies at any time, as determined
-    by Application Craft ("AC" or "Company") in its sole discretion, we may warn you or suspend or terminate your account.
-    Please note that we may change our Acceptable Use Policy at any time, and pursuant to the AC Terms, it is your responsibility to keep up-to-date with and adhere to the policies posted here. All capitalized terms used herein have the meanings stated in the Terms, unless stated otherwise.</string>
-    <string name="title_activity_jsign_up">JSignUpActivity</string>
-    <string name="title_activity_jresume">JResumeActivity</string>
+    <string name="user_name">UserName <font color="red">*</font></string>
     <string name="title_activity_empr_company_pro">empr_company_pro</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_employer_comp">EmployerComp</string>
     <string name="title_activity_emprjobpost">Emprjobpost</string>
+    <string name="app_name">JobReady365</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_jpolicy">JPolicy</string>
+    <string name="policy">Your use of the Service is subject to this Acceptable Use Policy.
+                            to keep up-to-date with and adhere to the policies posted here.
+                             All capitalized terms used herein have the meanings stated in
+                            the Terms, unless stated otherwise.xxxxxxxxxxxxxxxx
+                            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            xxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+    <string name="title_activity_jsign_up">JSignUpActivity</string>
+    <string name="title_activity_jresume">JResumeActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_jlogin">JLoginActivity</string>
+    <string name="title_activity_jdashboard">JDashboard</string>
+    <string name="title_activity_jdashboard_applied">JDashboardApplied</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="login">login</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+
+
+    <string name="employer">Employer</string>
+    <string name="employee">Employee</string>
+
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_jdashboard_navi">JDashboardNavi</string>
+    <string name="title_home">Home</string>
+    <string name="register_as_employee">Register as Employee</string>
+    <string name="register_as_employer">Register as Employer</string>
+    <string name="search_jobs">Search Jobs</string>
+    <string name="title_browse_jobs">Browse Jobs</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_search">Search</string>
+    <string name="title_menu">Menu</string>
+    <string name="title_appointment">Appointment</string>
+    <string name="title_view_cv">View CV</string>
+    <string name="appointment">Appointment</string>
+    <string name="logout">Logout</string>
+    <string name="btn_agree">Agree</string>
+    <string name="applied_jobs">Applied Jobs</string>
+
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_jlanguage">JLanguageActivity</string>
+    <string name="title_activity_jjob_openning">JJobOpenning</string>
+    <string name="title_activity_jcompany_profile">JCompanyProfile</string>
+    <string name="title_activity_jview_cv">JViewCVActivity</string>
+    <string name="title_activity_fasdfasdfs">fasdfasdfs</string>
+    <string name="title_activity_sdfgsdfgs">sdfgsdfgs</string>
+    <string name="title_activity_jdashboard1">JDashboard1</string>
+    <string name="title_activity_jdashboard_ok">JDashboardOk</string>
+    <string name="title_activity_jappointment">JAppointment</string>
+
+    <string name="take_your_photo">Take your Photo<font color="red">*</font></string>
+    <string name="full_name">Full name <font color="red">*</font></string>
+    <string name="nrc_number">N.R.C Number <font color="red">*</font></string>
+    <string name="father_name">Father Name <font color="red">*</font></string>
+    <string name="nationality">Nationality <font color="red">*</font></string>
+    <string name="current_position">Current Position <font color="red">*</font></string>
+    <string name="date_of_birth">Date of Birth <font color="red">*</font></string>
+    <string name="title_activity_jupload">JUploadActivity</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="contact_number">Contact Number</string>
+    <string-array name="nrc_number">
+                <item>1/</item>
+                <item>2/</item>
+                <item>3/</item>
+                <item>4/</item>
+                <item>5/</item>
+                <item>6/</item>
+                <item>7/</item>     </string-array>
+
+    <string-array name="nrc_division_code">
+            <item>pa-kha-na(naing)</item>
+            <item>ya-kha_na(naing)</item>
+            <item>sa-kha-na(naing)</item>
+           </string-array>
+
+    <string-array name="spin_religion">
+                <item>Religion <font color="red">*</font></item>
+                <item>Buddhist</item>
+                <item>Christian</item>
+                <item>Islamic</item>
+                <item>Other</item>
+               </string-array>
+
+    <string-array name="spin_marital_status">
+                <item>Marital Status <font color="red">*</font></item>
+                <item>Single</item>
+                <item> Married</item>
+                <item>In Relationship</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="spin_state_division">
+        <item>State/Division <font color="red">*</font></item>
+        <item></item>
+                <item>Ayeyarwaddy</item>
+                <item>Yangon</item>
+                 <item>Ayeyarwaddy</item>
+                    <item>Bago</item>
+    </string-array>
+
+    <string-array name="spin_township">
+        <item>Township <font color="red">*</font></item>
+
+                <item>Township1</item>
+        <item>Township2</item>
+        <item>Township3</item>
+    </string-array>
+
+
 </resources>

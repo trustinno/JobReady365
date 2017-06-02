@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.goldenictsolutions.win.jobready365_.Employee.JLoginActivity"
+    tools:showIn="@layout/activity_jlogin">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_textview"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="16dp"
+            android:weightSum="1"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/border_textview_small"
+                android:orientation="vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="14dp"
+                android:weightSum="1">
+
+                <!-- Email Label -->
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="210dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="0.02"
+                    app:srcCompat="@drawable/logo" />
+
+                <TextView
+                    android:id="@+id/textView3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/login"
+                    android:textAlignment="center"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/border_textview_gray"
+
+
+                    android:editable="false"
+                    android:hint="mobile or user name"
+                    android:inputType="textEmailAddress" />
+
+
+                <!-- Password Label -->
+
+
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/border_textview_gray"
+                    android:hint="Password"
+
+                    android:inputType="textPassword" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radioSex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+<!--
+                        <RadioButton
+                            android:id="@+id/radioButton_employer"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="146dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/employer"
+                            android:onClick="onRadioButtonClicked"
+                            android:textColor="@color/colorAccent" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton_employee"
+                            android:layout_width="141dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/employee"
+                            android:onClick="onRadioButtonClicked"
+                            android:textColor="@color/colorAccent" />
+    -->
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text="Auto Login?"
+                    android:textColor="@color/colorAccent" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/btn_login"
+                    style="@style/AppTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp"
+
+                    android:layout_marginTop="24dp"
+                    android:layout_weight="0.04"
+                    android:text="Login"
+                    android:textColor="@color/colorAccent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_as_employer"
+
+                        style="@style/AppTheme.NoActionBar"
+                        android:layout_width="142dp"
+
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_as_employer" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_as_employee"
+                        style="@style/AppTheme.NoActionBar"
+                        android:layout_width="138dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_as_employee" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/link_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:text="Forget Password?"
+
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16dip" />
+
+            </LinearLayout>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout_language"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.09"
+                app:tabIndicatorColor="@color/colorProjectDark">
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English" />
+
+                <android.support.design.widget.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Myanmar" />
+
+            </android.support.design.widget.TabLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
