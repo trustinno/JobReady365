@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JobReady365</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_jpolicy">JPolicy</string>
+    <string name="btn_agree">သေဘာတူသည္</string>
+    <string name="policy">  စ...........စစစဟဟဟဟဟဟ ထထထထထထထထထထထထထထထ
+                             ထထထထထထထထထထထထထထထထထထထထထထထထထထထထထထထထ
+                            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
+    <string name="title_activity_jsign_up">JSignUpActivity</string>
+    <string name="title_activity_jresume">JResumeActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_jlogin">JLoginActivity</string>
+    <string name="title_activity_jdashboard">JDashboard</string>
+    <string name="title_activity_jdashboard_applied">JDashboardApplied</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="employer">အလုပ္သမား</string>
+    <string name="employee">အလုပ္၇ွင္</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="login">ဝင္၇န္</string>
+    <string name="user_name">UserName <font color="red">*</font></string>
+    <string name="register_as_employee">အလုပ္သမားအၿဖင့္မွတ္ပံုတင္</string>
+    <string name="register_as_employer">အလုပ္၇ွင္အၿဖင့္မွ္တ္ပံုတင္</string>
+
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_jdashboard_navi">JDashboardNavi</string>
+    <string name="title_home">Home</string>
+    <string name="search_jobs">Search Jobs</string>
+    <string name="title_browse_jobs">Browse Jobs</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_search">Search</string>
+    <string name="title_menu">Menu</string>
+    <string name="title_appointment">Appointment</string>
+    <string name="title_view_cv">View CV</string>
+    <string name="appointment">Appointment</string>
+    <string name="logout">Logout</string>
+    <string name="applied_jobs">Applied Jobs</string>
+
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_jlanguage">JLanguageActivity</string>
+    <string name="title_activity_jjob_openning">JJobOpenning</string>
+    <string name="title_activity_jcompany_profile">JCompanyProfile</string>
+    <string name="title_activity_jview_cv">JViewCVActivity</string>
+    <string name="title_activity_fasdfasdfs">fasdfasdfs</string>
+    <string name="title_activity_sdfgsdfgs">sdfgsdfgs</string>
+    <string name="title_activity_jdashboard1">JDashboard1</string>
+    <string name="title_activity_jdashboard_ok">JDashboardOk</string>
+    <string name="title_activity_jappointment">JAppointment</string>
+</resources>
