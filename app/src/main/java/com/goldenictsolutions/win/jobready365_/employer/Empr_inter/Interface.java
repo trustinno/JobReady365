@@ -71,6 +71,11 @@ public interface Interface {
             @Query("type")String jobtp_type
     );
 
+    @GET("api/all_company/{user_id}")
+    Call<Empr_Server_Response>getallcompnay(@Path("user_id")String empr_dash_userid,
+                                            @Query("id")String companyId);
+
+
     @POST("api/company")
     Call<Empr_Server_Response> post(@Body empr_company empr_company);
 

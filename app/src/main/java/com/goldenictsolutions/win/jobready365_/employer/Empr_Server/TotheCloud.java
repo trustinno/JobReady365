@@ -173,6 +173,42 @@ public class TotheCloud {
 
     }
 
+
+    public void getallcomp(String empr_dash_useid,String companyId)
+    {
+        HttpLoggingInterceptor logging=new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient=new OkHttpClient.Builder();
+        httpClient.addInterceptor(logging);
+
+        Retrofit retrofit =new Retrofit.Builder()
+                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(SERVER_URL).build();
+
+
+        Interface service=retrofit.create(Interface.class);
+        Call<Empr_Server_Response>call=service.getallcompnay(empr_dash_useid,companyId);
+        //       logo,
+        call.enqueue(new Callback<Empr_Server_Response>() {
+            @Override
+            public void onResponse(Call<Empr_Server_Response> call, Response<Empr_Server_Response> response) {
+                Log.e(TAG,"Success"+response.code());
+                Log.e(TAG,"Success"+response.body());
+                Log.e(TAG,"Success"+response.message());
+                Empr_Busprovider.getBus().post(new ServerEventgetAllCompany(response.body()));
+                Log.e(TAG,"Success");
+            }
+
+            @Override
+            public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
+                Log.e(TAG,"Failure"+t.getMessage());
+                Empr_Busprovider.getBus().post(new Empr_Error_Event(-2,t.getMessage()));
+            }
+        });
+
+    }
+
     public void getjobcate(int jocate_id, String jobcate) {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);

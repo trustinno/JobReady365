@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -32,7 +31,7 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
-import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_switchva;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Getter;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ public class Emprjobpost extends AppCompatActivity {
     EditText editTextdialog;
     TextView editText;
 
-    String empr_cname,User_id,Company_id,Contact_info,Summary,Description,Requirement,Language_skill,Job_title;
+    String empr_cname,empr_userid,User_id,Company_id,Contact_info,Summary,Description,Requirement,Language_skill,Job_title;
     int   Township,myoo,Job_nature,Job_category,Salary_range, Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Min_age,Max_age;
     Button diaglogbutton,diaglogbuttoncancle,dialgoyes,dialogno;
     Dialog dialog,backdialog;
@@ -109,19 +108,19 @@ public class Emprjobpost extends AppCompatActivity {
         ArrayAdapter spamount_adp=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,spamount);
         spamount_jobpost.setAdapter(spamount_adp);
 
-        final Empr_switchva empr_switchva=new Empr_switchva();
+        final Empr_Getter empr_getter =new Empr_Getter();
         grasw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                 {
                     int grad=1;
-                    empr_switchva.setGra(grad);
+                    empr_getter.setGra(grad);
                     Toast.makeText(getApplicationContext(),"switch graduated is on",Toast.LENGTH_LONG).show();
                 }
                 else {
                     int grad=0;
-                    empr_switchva.setGra(grad);
+                    empr_getter.setGra(grad);
                 }
             }
         });
@@ -133,12 +132,12 @@ public class Emprjobpost extends AppCompatActivity {
                 if (isChecked)
                 {
                     int trasport=1;
-                    empr_switchva.setTran(trasport);
+                    empr_getter.setTran(trasport);
                     Toast.makeText(getApplicationContext(),"switch tarnsportation is on",Toast.LENGTH_LONG).show();
                 }
                 else {
                     int trasport=0;
-                    empr_switchva.setTran(trasport);
+                    empr_getter.setTran(trasport);
 
                 }
             }
@@ -152,13 +151,13 @@ public class Emprjobpost extends AppCompatActivity {
                 {
 
                     int accomod=1;
-                    empr_switchva.setAccomo(accomod);
+                    empr_getter.setAccomo(accomod);
 
                     Toast.makeText(getApplicationContext(),"switch accomodation is on",Toast.LENGTH_LONG).show();
                 }
                 else {
                     int accomod=0;
-                    empr_switchva.setAccomo(accomod);
+                    empr_getter.setAccomo(accomod);
                 }
 
             }
@@ -171,14 +170,14 @@ public class Emprjobpost extends AppCompatActivity {
                 if (isChecked)
                 {
                     int food=1;
-                    empr_switchva.setFod(food);
+                    empr_getter.setFod(food);
 
                     Toast.makeText(getApplicationContext(),"switch Food is on",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
                     int food=0;
-                    empr_switchva.setFod(food);
+                    empr_getter.setFod(food);
                 }
 
             }
@@ -193,13 +192,13 @@ public class Emprjobpost extends AppCompatActivity {
                 if (isChecked)
                 {
                     int singl=1;
-                    empr_switchva.setSing(singl);
+                    empr_getter.setSing(singl);
                     Toast.makeText(getApplicationContext(),"switch FA is on",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
                     int singl=0;
-                    empr_switchva.setSing(singl);
+                    empr_getter.setSing(singl);
                 }
 
 
@@ -216,13 +215,13 @@ public class Emprjobpost extends AppCompatActivity {
                 {
 
                     int traning=1;
-                    empr_switchva.setTrain(traning);
+                    empr_getter.setTrain(traning);
                     Toast.makeText(getApplicationContext(),"switch trainning is on",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
                     int traning=0;
-                    empr_switchva.setTrain(traning);
+                    empr_getter.setTrain(traning);
 
                 }
 
@@ -316,9 +315,10 @@ public class Emprjobpost extends AppCompatActivity {
 //                ,Requirement,Language_skill,Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Max_age,Min_age);
 //
 
-                int bla = empr_switchva.getAccomo();
+                int bla = empr_getter.getAccomo();
                 Toast.makeText(getApplicationContext(),String.valueOf(bla),Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+                Intent intent=new Intent(Emprjobpost.this,Employerd.class);
+                intent.putExtra("userid_get",empr_userid);
                 startActivity(intent);
 
             }
@@ -482,7 +482,7 @@ public class Emprjobpost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+                Intent intent=new Intent(Emprjobpost.this,Employerd.class);
                 startActivity(intent);
 
             }

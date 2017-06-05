@@ -110,8 +110,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0979848775,09586843345"
+                            android:hint="0979848775,09586843345"
                             android:paddingTop="2dp"
+                            android:id="@+id/mobile"
                             android:textColor="@color/colorblack"
                             android:paddingBottom="2dp"/>
 

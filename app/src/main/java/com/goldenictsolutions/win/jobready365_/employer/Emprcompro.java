@@ -98,7 +98,7 @@ final String formdashadd =getIntent().getStringExtra("fromdash");
                 empr_compro_save.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        //Intent intent=new Intent(Emprcompro.this,Employer.class);
+                        //Intent intent=new Intent(Emprcompro.this,Employerd.class);
                         //startActivity(intent);
                     }
 
@@ -108,7 +108,7 @@ final String formdashadd =getIntent().getStringExtra("fromdash");
                     empr_compro_back.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent=new Intent(Emprcompro.this,Employer.class);
+                            Intent intent=new Intent(Emprcompro.this,Employerd.class);
                             startActivity(intent);
                         }
                     });

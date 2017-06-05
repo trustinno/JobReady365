@@ -29,7 +29,6 @@ public class Emprjobopening extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_emprjobopening, container, false);
-
         gotojopopenmod=(Button)view.findViewById(R.id.empr_jopen_mod);
         gotojopopenmod.setOnClickListener(new View.OnClickListener() {
             @Override

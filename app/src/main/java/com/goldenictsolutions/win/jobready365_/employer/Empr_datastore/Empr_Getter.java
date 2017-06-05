@@ -4,13 +4,14 @@ package com.goldenictsolutions.win.jobready365_.employer.Empr_datastore;
  * Created by zarni on 5/30/17.
  */
 
-public class Empr_switchva {
+public class Empr_Getter {
     private  int gra;
     private  int accomo;
     private  int sing;
     private int tran;
     private int fod;
     private int train;
+    private String empr_compid;
 
     public void setGra(int grad){
         gra=grad;
@@ -40,6 +41,10 @@ public class Empr_switchva {
         train=traning;
 
     }
+    public void setEmpr_compid(String empr_Compid)
+    {
+        empr_compid=empr_Compid;
+    }
 
 
 
@@ -67,5 +72,7 @@ public class Empr_switchva {
     {
         return train;
     }
-
+    public String getEmpr_compid(){
+        return empr_compid;
+    }
 }

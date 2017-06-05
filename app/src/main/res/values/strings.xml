@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Job</string>
+    <string name="app_name">Jobready</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_jpolicy">JPolicy</string>
   <string name="policy">Your use of the Service is subject to this Acceptable Use Policy.

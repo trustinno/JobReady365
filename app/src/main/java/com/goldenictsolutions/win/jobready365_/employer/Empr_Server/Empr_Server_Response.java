@@ -4,6 +4,7 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Busi
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_getallcomp;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_jobcate;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.empr_company;
 import com.google.gson.annotations.SerializedName;
@@ -17,8 +18,8 @@ import java.util.List;
 
 public class Empr_Server_Response
 {
-    @SerializedName("company")
-    private ArrayList<empr_company> empr_companies;
+//    @SerializedName("company")
+//    private ArrayList<empr_company> empr_companies;
 
     @SerializedName("jobindustry")
     private ArrayList<Empr_Businesstype>empr_businesstypes=null;
@@ -39,7 +40,8 @@ public class Empr_Server_Response
     private ArrayList<Empr_jobcate> empr_jobcates=null;
 
 
-
+    @SerializedName("company")
+    private ArrayList<Empr_getallcomp>empr_getallcomps=null;
 
 
 
@@ -50,8 +52,8 @@ public class Empr_Server_Response
 
     public ArrayList<Empr_JobType>getJobTypes(){return jobTypes;}
 
-    public ArrayList<empr_company>getEmpr_companies()
-    {return empr_companies;}
+//    public ArrayList<empr_company>getEmpr_companies()
+//    {return empr_companies;}
 
     public ArrayList<Empr_Businesstype>getEmpr_businesstypes(){return empr_businesstypes;}
 
@@ -63,6 +65,10 @@ public class Empr_Server_Response
         return townships;
     }
 
+    public ArrayList<Empr_getallcomp>getEmpr_getallcomps()
+    {
+        return empr_getallcomps;
+    }
 
 
 }
