@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_employer"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Employer"
+    tools:showIn="@layout/activity_employer">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/empr_container"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/activity_horizontal_margin"/>
+
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="bottom"
+        app:bb_tabXmlResource="@xml/bottom_bars"
+        app:bb_inActiveTabColor="@color/colorWhite"
+        app:bb_activeTabColor="@color/colorWhite"
+        app:bb_badgesHideWhenActive="true"
+        app:bb_showShadow="true"/>
+
+
+</LinearLayout>

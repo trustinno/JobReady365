@@ -1,21 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_emprjobpost"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.goldenictsolutions.win.jobready365_.employer.Emprjobpost"
-    tools:showIn="@layout/activity_emprjobpost">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Emprpostnewjob">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
-        android:scrollbarTrackVertical="@drawable/empr_scroll"
-        >
+        android:scrollbarTrackVertical="@drawable/empr_scroll">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,18 +34,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_business"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
 
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
-                        android:textAppearance="?android:textAppearanceMedium"
-                        android:id="@+id/emr_jobpo_cname"
                         android:layout_marginLeft="14dp"
                         android:hint="Company Name"
-                        android:paddingBottom="8dp"
-                        android:textAlignment="center"
+                        android:paddingLeft="8dp"
                         android:background="@drawable/border"/>
 
                 </LinearLayout>
@@ -64,15 +55,15 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
                         android:paddingRight="10dp"
-                        android:src="@drawable/ic_empr_list"/>
-                    <Spinner
-                        android:id="@+id/empr_spjobtype"
+                        android:src="@drawable/ic_school_black_24dp"/>
+                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                        android:id="@+id/android_material_design_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Choose Your Job Type"
                         android:textColorHint="#05ab9a"/>
@@ -90,14 +81,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_jobcat"/>
-                    <Spinner
+                        android:src="@drawable/ic_school_black_24dp"/>
+                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/empr_spjobcate"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Job Category"
-                        android:layout_marginLeft="10dp"
                         android:textColorHint="#05ab9a"/>
 
                 </LinearLayout>
@@ -109,15 +99,14 @@
                     android:paddingBottom="6dp">
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_person"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
-                        android:id="@+id/empr_job_postion"
                         android:layout_marginLeft="14dp"
                         android:layout_marginTop="9dp"
                         android:hint="Position"
@@ -133,20 +122,20 @@
                     android:paddingBottom="10dp">
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_empr_qulic"/>
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_school_black_24dp"/>
 
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="32dp"
+                        android:layout_height="30dp"
                         android:maxLines="1"
                         android:id="@+id/editquilifi"
                         android:clickable="true"
                         android:paddingTop="3dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_marginLeft="20dp"
-                        android:paddingLeft="10dp"
+                        android:paddingLeft="14dp"
                         android:text="Qualification"
                         android:background="@drawable/border"
                         />
@@ -161,13 +150,12 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/empr_secondary" />
+                        android:src="@drawable/ic_school_black_24dp" />
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="32dp"
+                        android:layout_height="30dp"
                         android:maxLines="1"
-                        android:id="@+id/empr_quantity"
                         android:layout_marginLeft="20dp"
                         android:paddingLeft="10dp"
                         android:hint="Quantity"
@@ -180,26 +168,23 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingBottom="6dp">
-
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_amount"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
 
-                    <Spinner
-                        android:id="@+id/empr_sallary"
+                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                        android:id="@+id/android_material_design_spinner3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Salary Range(MMK)"
+                        android:layout_marginLeft="10dp"
                         android:textColorHint="#05ab9a"/>
 
                 </LinearLayout>
-
-                <!--   TODO add spinner for location -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -210,7 +195,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_exp" />
+                        android:src="@drawable/ic_school_black_24dp" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -223,6 +208,10 @@
                         />
 
                 </LinearLayout>
+
+
+
+
                 <!--<LinearLayout-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="wrap_content"-->
@@ -256,68 +245,19 @@
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/ic_empr_lan"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
                         android:paddingLeft="@dimen/empr_between_layout"
-                        android:hint="Language Skill"
                         android:layout_marginLeft="10dp"
+                        android:hint="Language Skill"
                         android:background="@drawable/border"
                         />
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="6dp">
-
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:paddingRight="10dp"
-                        android:src="@drawable/empr_satate"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <Spinner
-                            android:id="@+id/empr_city_sppost"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="14dp"
-                            android:textAppearance="?android:textAppearanceMedium"
-                            android:hint="State/Division"
-                            android:textColorHint="#05ab9a"/>
-
-                        <Spinner
-                            android:id="@+id/empr_township_sppost"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="14dp"
-                            android:textAppearance="?android:textAppearanceMedium"
-                            android:hint="State/Division"
-                            android:textColorHint="#05ab9a"/>
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:maxLines="1"
-                            android:hint="Address"
-                            android:id="@+id/empr_jpo_address"
-                            android:paddingLeft="@dimen/empr_between_layout"
-                            android:layout_marginLeft="@dimen/empr_between_layout"
-                            android:background="@drawable/border"
-                            />
-                    </LinearLayout>
-                </LinearLayout>
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -328,15 +268,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_gra"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
                     <Switch
                         android:text="Graduated?"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="15dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:id="@+id/empr_gra_sw"
-                        android:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/switch1"
+                        app:theme="@style/BrandedSwitch.control"
                         />
                 </LinearLayout>
 
@@ -348,15 +290,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_single"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
                     <Switch
                         android:text="Single?"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/empr_single_sw"
-                        android:paddingLeft="15dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch2"
+                        android:paddingLeft="10dp"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        android:layout_marginTop="9dp"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:theme="@style/BrandedSwitch.control"/>
+                        app:theme="@style/BrandedSwitch.control"/>
 
                 </LinearLayout>
 
@@ -368,17 +312,18 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/accomo"
+                        android:src="@drawable/ic_school_black_24dp"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
 
 
                     <Switch
                         android:text="Accommodation"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/empr_accomo_sw"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch3"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:theme="@style/BrandedSwitch.control"
+                        app:theme="@style/BrandedSwitch.control"
                         />
 
                 </LinearLayout>
@@ -390,15 +335,17 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/salad"
+
+                        android:src="@drawable/ic_school_black_24dp"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
                     <Switch
                         android:text="Food"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:theme="@style/BrandedSwitch.control"
-                        android:id="@+id/empr_food_sw"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        app:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/switch4"
                         />
                 </LinearLayout>
 
@@ -412,16 +359,18 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/bus"
+
+                        android:src="@drawable/ic_school_black_24dp"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
 
                     <Switch
                         android:text="Transportation"
                         android:layout_width="match_parent"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:layout_height="match_parent"
-                        android:id="@+id/empr_tran_sw"
-                        android:theme="@style/BrandedSwitch.control"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/switch5"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        app:theme="@style/BrandedSwitch.control"
                         />
 
                 </LinearLayout>
@@ -435,7 +384,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        android:src="@drawable/lecture"
+                        android:src="@drawable/ic_school_black_24dp"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
 
                     <Switch
@@ -443,8 +392,9 @@
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:theme="@style/BrandedSwitch.control"
-                        android:id="@+id/empr_train_sw" />
+                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        app:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/switch6" />
 
                 </LinearLayout>
 
@@ -459,7 +409,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="15dp"
-                        android:src="@drawable/range"/>
+                        android:src="@drawable/ic_school_black_24dp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -494,6 +444,28 @@
                     </LinearLayout>
 
                 </LinearLayout>
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingBottom="6dp">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:paddingRight="5dp"-->
+                <!--android:src="@drawable/ic_restaurant_black_24dp"/>-->
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="32dp"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:background="@drawable/border"-->
+                <!--android:textAppearance="?android:textAppearanceMedium"-->
+                <!--android:text="Facilities"/>-->
+                <!--</LinearLayout>-->
 
 
                 <LinearLayout
@@ -505,8 +477,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_empr_coabout" />
-
+                        android:src="@drawable/ic_school_black_24dp" />
 
                     <EditText
                         android:layout_width="match_parent"
@@ -514,43 +485,29 @@
                         android:maxLines="3"
                         android:layout_marginLeft="10dp"
                         android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:hint="Description"
+                        android:hint="Working Experience"
                         android:background="@drawable/border"
                         />
 
                 </LinearLayout>
 
-
-
             </LinearLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="15dp"
-                android:paddingTop="@dimen/activity_horizontal_margin"
-                android:layout_gravity="bottom">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin">
                 <Button
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
+                    android:text="Save"
+                    android:layout_marginBottom="@dimen/empr_between_layout"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:id="@+id/gotocompro"
-                    android:paddingLeft="@dimen/empr_between_layout"
-                    android:layout_margin="@dimen/empr_between_layout"
-                    android:paddingBottom="10dp"
-                    android:background="@drawable/ic_back_page"/>
-                <Button
-                    android:layout_marginTop="5dp"
-                    android:layout_width="50dp"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:layout_marginBottom="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/empr_between_layout"
                     android:layout_alignParentRight="true"
-                    android:background="@drawable/ic_next_page"
+                    android:background="@color/colorback"
                     android:id="@+id/gotoemp"
                     />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</FrameLayout>
