@@ -1,5 +1,6 @@
 package com.goldenictsolutions.win.jobready365_.Employee;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -31,17 +32,19 @@ public class JLoginActivity extends AppCompatActivity {
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
 
-    private Button btnRegisterAsEmployee;
+
 
     private Communicator communicator;
-    private String username, password;
-    private Button btnRegisterAsEmployer;
+    private String username, password , token;
+    private Button btnRegisterAsEmployer,btnRegisterAsEmployee;
     private Button btnLogin;
     private TabLayout tabLayoutLanguage;
     private EditText usernameET;
     private EditText passwordET;
     static User user;
-    private RadioButton rBtnEmployee,rBtnEmployer;
+  //  private RadioButton rBtnEmployee,rBtnEmployer;
+    private int user_type;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +53,14 @@ public class JLoginActivity extends AppCompatActivity {
 
         communicator = new Communicator();
         btnLogin = (Button) findViewById(R.id.btn_login);
-        rBtnEmployee = (RadioButton)findViewById(R.id.radioButton_employee);
-        rBtnEmployer = (RadioButton)findViewById(R.id.radioButton_employer);
+       // rBtnEmployee = (RadioButton)findViewById(R.id.radioButton_employee);
+       // rBtnEmployer = (RadioButton)findViewById(R.id.radioButton_employer);
        /* if(rBtnEmployee.isChecked()){
             rBtnEmployer
         }
         */
 
-        addListenerOnButton();
+      //  addListenerOnButton();
 
         usernameET = (EditText) findViewById(R.id.input_email);
         passwordET = (EditText) findViewById(R.id.input_password);
@@ -67,6 +70,10 @@ public class JLoginActivity extends AppCompatActivity {
                 username = usernameET.getText().toString();
                 password = passwordET.getText().toString();
                 if ((!(username.isEmpty()) & (!password.isEmpty()))) {
+                    progressDialog = new ProgressDialog(JLoginActivity.this);
+                    progressDialog.setMessage("logging in ...");
+                    progressDialog.setCancelable(false);
+                    progressDialog.show();
                     usePost(username, password);
                 } else if (username.isEmpty() & password.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Enter your username and password again", Toast.LENGTH_SHORT).show();
@@ -129,12 +136,24 @@ public class JLoginActivity extends AppCompatActivity {
 
             }
         });
+        btnRegisterAsEmployer = (Button) findViewById(R.id.btn_as_employer);
+        btnRegisterAsEmployer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(JLoginActivity.this, JSignUpActivity.class);
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+            }
+        });
         btnRegisterAsEmployee = (Button) findViewById(R.id.btn_as_employee);
         btnRegisterAsEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(JLoginActivity.this, JSignUpActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(JLoginActivity.this, JSignUpActivity.class);
+
+                startActivity(intent1);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
@@ -150,7 +169,7 @@ public class JLoginActivity extends AppCompatActivity {
             }
         });
     }
-
+/*
     public void addListenerOnButton() {
 
         radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
@@ -176,7 +195,7 @@ public class JLoginActivity extends AppCompatActivity {
 
     }
 
-
+*/
 
     private void restartActivity() {
         Intent intent = getIntent();
@@ -198,6 +217,10 @@ public class JLoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),  "invalid credentials", Toast.LENGTH_SHORT).show();
         } else if(serverEvent.getServerResponse() != null){
             Toast.makeText(getApplicationContext(), serverEvent.getServerResponse().getToken(), Toast.LENGTH_SHORT).show();
+            token = serverEvent.getServerResponse().getToken();
+            progressDialog.hide();
+            Intent intent = new Intent(this,JResumeActivity.class);
+            startActivity(intent);
         }
 
     }
@@ -220,6 +243,26 @@ public class JLoginActivity extends AppCompatActivity {
         super.onPause();
         BusProvider.getInstance().unregister(this);
     }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.radio_button_sign_up_employer:
+                if (checked)
+                    // Pirates are the best
+                    user_type = 1;
+                break;
+            case R.id.radio_button_sign_up_employee:
+                if (checked)
+                    // Ninjas rule
+                    user_type = 2;
+                break;
+        }
+    }
+
 
 
 }

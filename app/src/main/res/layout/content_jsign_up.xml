@@ -64,34 +64,41 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal">
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
-                    <RadioButton
-                        android:id="@+id/radioButton3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.77"
-                        android:text="Employee"
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_button_sign_up_employee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.77"
+                            android:onClick="onRadioButtonClicked"
+                            android:checked="true"
+                            android:text="Employee" />
+
 
                         android:textColor="@color/colorAccent" />
 
-                    <RadioButton
-                        android:id="@+id/radioButton2"
-                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.62"
-                        android:text="Employer"
+                        <RadioButton
+                            android:id="@+id/radio_button_sign_up_employer"
+                            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.62"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Employer" />
+
                         android:textColor="@color/colorAccent" />
-                </RadioGroup>
+                    </RadioGroup>
 
                 </LinearLayout>
 
                 <EditText
-                    android:id="@+id/input_email"
+                    android:id="@+id/input_email_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -106,7 +113,7 @@
 
 
                 <EditText
-                    android:id="@+id/input_password"
+                    android:id="@+id/input_password_sign_up"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -161,12 +168,6 @@
           android:textSize="16dip" />
 
           -->
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/gotoemployder"
-                    android:text="GotoEmployer"/>
-
             </LinearLayout>
 
 

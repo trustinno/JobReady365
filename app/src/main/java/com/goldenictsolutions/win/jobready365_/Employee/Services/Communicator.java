@@ -9,6 +9,7 @@ import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.Educatio
 import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.Experience;
 import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.GetResult;
 import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.Refree;
+import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.SignUp;
 import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.Skill;
 import com.goldenictsolutions.win.jobready365_.Employee.PojoJavaClasses.login;
 import com.goldenictsolutions.win.jobready365_.Employee.Services.Event.ErrorEvent;
@@ -70,7 +71,7 @@ public class Communicator {
             });
     }
 
-    public void loginGet(String username, String password){
+    public void SignUpPost(String telephone_no, String password, int user_type, String email, String userName){
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -86,19 +87,22 @@ public class Communicator {
         Interface service = retrofit.create(Interface.class);
 
         //Call<ServerResponse> call = service.get("login",username,password);
-        Call<ServerResponse> call = service.get(username,password);
-
+        Call<ServerResponse> call = service.postSignUp(new SignUp(telephone_no,password,user_type,userName,email));
         call.enqueue(new Callback<ServerResponse>() {
             @Override
             public void onResponse(Call<ServerResponse> call, Response<ServerResponse> response) {
-                // response.isSuccessful() is true if the response code is 2xx
+                Log.e(TAG, "Success"+response.code());
+                Log.e(TAG, "Success"+response.body());
+                Log.e(TAG, "Success"+response.message());
                 BusProvider.getInstance().post(new ServerEvent(response.body()));
-                Log.e(TAG,"Success");
+                Log.e(TAG, "Success");
+
             }
 
             @Override
             public void onFailure(Call<ServerResponse> call, Throwable t) {
                 // handle execution failures like no internet connectivity
+                Log.e(TAG, "Failure "+t.getMessage());
                 BusProvider.getInstance().post(new ErrorEvent(-2,t.getMessage()));
             }
         });

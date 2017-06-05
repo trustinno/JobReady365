@@ -20,10 +20,10 @@ public class ServerResponse implements Serializable{
     private int errorCode;
     private int status;
     @SerializedName("error")
-    private String error;
+    private boolean error;
 
     @SerializedName("result")
-   private ArrayList<Employer> employerList= null;
+   private boolean result;
 
 
     @SerializedName("user")
@@ -34,7 +34,7 @@ public class ServerResponse implements Serializable{
     private String token;
 
 
-    public ServerResponse(String email, String password, String message, int errorCode, int status, String error){
+    public ServerResponse(String email, String password, String message, int errorCode, int status, boolean error){
         this.email = email;
         this.password = password;
         this.message = message;
@@ -76,11 +76,11 @@ public class ServerResponse implements Serializable{
         this.errorCode = errorCode;
     }
 
-    public String getError() {
+    public boolean getError() {
         return error;
     }
 
-    public void setError(String error) {
+    public void setError(boolean error) {
         this.error = error;
     }
 
@@ -109,11 +109,11 @@ public class ServerResponse implements Serializable{
         this.userList = userList;
     }
 
-    public ArrayList<Employer> getEmployerList() {
-        return employerList;
+    public boolean getEmployerList() {
+        return result;
     }
 
-    public void setEmployerList(ArrayList<Employer> employerList) {
-        this.employerList = employerList;
+    public void setEmployerList(Boolean result) {
+        this.result = result;
     }
 }
