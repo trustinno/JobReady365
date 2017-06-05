@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.goldenictsolutions.win.jobready365_.employer.Employer"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Employerd"
     tools:showIn="@layout/activity_employer">
 
 

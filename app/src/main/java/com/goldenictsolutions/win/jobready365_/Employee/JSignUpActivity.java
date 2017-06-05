@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Switch;
 
 import com.goldenictsolutions.win.jobready365_.R;
+import com.goldenictsolutions.win.jobready365_.employer.Emprcompro;
 
 public class JSignUpActivity extends AppCompatActivity {
 
@@ -42,6 +43,16 @@ public class JSignUpActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Button gotoemployer=(Button)findViewById(R.id.gotoemployder);
+        gotoemployer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(JSignUpActivity.this, Emprcompro.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }

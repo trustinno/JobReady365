@@ -290,7 +290,7 @@ public class Employer implements Serializable {
 
     @Override
     public String toString() {
-        return "Employer{" +
+        return "Employerd{" +
                 "id='" + id + '\'' +
                 ", employerId='" + employerId + '\'' +
                 ", jobCategoryId='" + jobCategoryId + '\'' +

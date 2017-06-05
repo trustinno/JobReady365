@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -283,8 +282,8 @@ public class Emprjobpost extends AppCompatActivity {
         }
 
 
-        Button gotoemployer=(Button)findViewById(R.id.gotoemp);
-        gotoemployer.setOnClickListener(new View.OnClickListener() {
+        Button gotoemp=(Button)findViewById(R.id.gotoemp);
+        gotoemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -316,9 +315,9 @@ public class Emprjobpost extends AppCompatActivity {
 //                ,Requirement,Language_skill,Accomodation,Single,Food_supply,Ferry_supply,Male,Female,Unisex,Max_age,Min_age);
 //
 
-                int bla = empr_switchva.getAccomo();
-                Toast.makeText(getApplicationContext(),String.valueOf(bla),Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+               // int bla = empr_switchva.getAccomo();
+                //Toast.makeText(getApplicationContext(),String.valueOf(bla),Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(Emprjobpost.this,Employerd.class);
                 startActivity(intent);
 
             }
@@ -482,7 +481,7 @@ public class Emprjobpost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Emprjobpost.this,Employer.class);
+                Intent intent=new Intent(Emprjobpost.this,Employerd.class);
                 startActivity(intent);
 
             }
