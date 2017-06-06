@@ -29,6 +29,8 @@ import com.squareup.otto.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.R.attr.fragment;
+
 public class EmprDashboard extends Fragment {
 
     public EmprDashboard() {
@@ -59,7 +61,6 @@ public class EmprDashboard extends Fragment {
          companyId="";
         getcompnaysp(empr_dash_userid,companyId);
 
-        final Fragment fragment=new Fragment();
 
         final        FragmentManager fragmentManager = getFragmentManager();
      final    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -69,12 +70,12 @@ public class EmprDashboard extends Fragment {
             @Override
             public void onClick(View v) {
                 Emprdashcompro emprdashcompro=new Emprdashcompro();
-                fragmentTransaction.replace(R.id.empr_container, emprdashcompro);
-                Bundle bundle=new Bundle();
                 SpinnerComid spinnercom=new SpinnerComid();
                 getCompanyId=spinnercom.getid();
+                Bundle bundle=new Bundle();
                 bundle.putString("companyid",getCompanyId);
-                fragment.setArguments(bundle);
+                emprdashcompro.setArguments(bundle);
+                fragmentTransaction.replace(R.id.empr_container, emprdashcompro);
                 fragmentTransaction.commit();
 
             }
@@ -132,7 +133,7 @@ public class EmprDashboard extends Fragment {
             spcompanyid.clear();
             List<Empr_getallcomp>allcom=serverEventgetAllCompany.getEmpr_server_response().getEmpr_getallcomps();
             for (int i=0;i<allcom.size();i++)
-            {
+                {
                 spcompanyid.add(allcom.get(i).getEmpr_compid());
                 spcompanyname.add(allcom.get(i).getEmpr_compname());
                  }

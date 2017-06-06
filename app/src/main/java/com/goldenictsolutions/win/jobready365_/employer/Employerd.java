@@ -43,9 +43,9 @@ String userid;
 
         {
             fragmentTransaction.replace(R.id.empr_container, new EmprDashboard());
-            Bundle bundle=new Bundle();
-            bundle.putString("userid_get",userid);
-            fragment.setArguments(bundle);
+           // Bundle bundle=new Bundle();
+            //bundle.putString("userid_get",userid);
+            //fragment.setArguments(bundle);
             fragmentTransaction.commit();
         } else if (tabId == R.id.tab_nearby) {
             fragmentTransaction.replace(R.id.empr_container, new Emprpostnewjob());

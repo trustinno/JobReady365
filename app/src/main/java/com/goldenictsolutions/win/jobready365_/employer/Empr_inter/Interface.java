@@ -76,6 +76,9 @@ public interface Interface {
                                             @Query("id")String companyId);
 
 
+    @GET("api/company/{id}")
+    Call<Empr_Server_Response>getcompanybyid(@Path("id")String comp_id);
+
     @POST("api/company")
     Call<Empr_Server_Response> post(@Body empr_company empr_company);
 
