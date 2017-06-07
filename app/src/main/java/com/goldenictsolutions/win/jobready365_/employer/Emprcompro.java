@@ -31,9 +31,9 @@ public class Emprcompro extends AppCompatActivity {
 
     TotheCloud totheCloud;
 
-    String user_id,company_name, logo, address, email, website, description, primary_contact_person, secondary_contact_person;
-    int township, job_industry,telephone, citys, mobile_no, secondary_mobile, primary_mobile;
-    EditText cname, ctel, cadd, cemail, cdesc, cpri_conp, csec_conp, csec_conm, cpri_conm,cweb;
+    private String user_id,company_name, logo, address, email, website, description, primary_contact_person, secondary_contact_person;
+    private int township, job_industry,telephone, citys, mobile_no, secondary_mobile, primary_mobile;
+    private EditText cname, ctel, cadd, cemail, cdesc, cpri_conp, csec_conp, csec_conm, cpri_conm,cweb;
     //   private   Spinner  townshipspinner,statematerialspinner;
     private List spcityid = new ArrayList<>();
     private List spcity = new ArrayList<>();
