@@ -7,9 +7,10 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
-        android:scrollbarTrackVertical="@drawable/empr_scroll">
+        android:scrollbarTrackVertical="@drawable/empr_scroll"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,15 +35,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/ic_empr_business"/>
 
-                    <EditText
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:id="@+id/emr_jobponew_cname"
                         android:layout_marginLeft="14dp"
                         android:hint="Company Name"
-                        android:paddingLeft="8dp"
+                        android:paddingBottom="8dp"
+                        android:textAlignment="center"
                         android:background="@drawable/border"/>
 
                 </LinearLayout>
@@ -55,15 +59,15 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginRight="5dp"
                         android:paddingRight="10dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
-                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                        android:id="@+id/android_material_design_spinner"
+                        android:src="@drawable/ic_empr_list"/>
+                    <Spinner
+                        android:id="@+id/empr_spjobtypenew"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        android:layout_marginLeft="10dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Choose Your Job Type"
                         android:textColorHint="#05ab9a"/>
@@ -81,13 +85,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
-                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                        android:src="@drawable/ic_empr_jobcat"/>
+                    <Spinner
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        android:layout_height="match_parent"
+                        android:id="@+id/empr_spjobcatenew"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Job Category"
+                        android:layout_marginLeft="10dp"
                         android:textColorHint="#05ab9a"/>
 
                 </LinearLayout>
@@ -99,14 +104,15 @@
                     android:paddingBottom="6dp">
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/ic_empr_person"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
+                        android:id="@+id/empr_jobnew_postion"
                         android:layout_marginLeft="14dp"
                         android:layout_marginTop="9dp"
                         android:hint="Position"
@@ -122,20 +128,20 @@
                     android:paddingBottom="10dp">
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_empr_qulic"/>
 
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="32dp"
                         android:maxLines="1"
-                        android:id="@+id/editquilifi"
+                        android:id="@+id/editquilifinew"
                         android:clickable="true"
                         android:paddingTop="3dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_marginLeft="20dp"
-                        android:paddingLeft="14dp"
+                        android:paddingLeft="10dp"
                         android:text="Qualification"
                         android:background="@drawable/border"
                         />
@@ -150,12 +156,13 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_school_black_24dp" />
+                        android:src="@drawable/empr_secondary" />
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="32dp"
                         android:maxLines="1"
+                        android:id="@+id/empr_newquantity"
                         android:layout_marginLeft="20dp"
                         android:paddingLeft="10dp"
                         android:hint="Quantity"
@@ -168,23 +175,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingBottom="6dp">
+
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginRight="5dp"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/ic_empr_amount"/>
 
-                    <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                        android:id="@+id/android_material_design_spinner3"
+                    <Spinner
+                        android:id="@+id/empr_newsallary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="Salary Range(MMK)"
-                        android:layout_marginLeft="10dp"
                         android:textColorHint="#05ab9a"/>
 
                 </LinearLayout>
+
+                <!--   TODO add spinner for location -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -195,12 +205,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp" />
+                        android:src="@drawable/ic_empr_exp" />
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:maxLines="3"
+                        android:id="@+id/empr_jobnew_workexp"
                         android:layout_marginLeft="15dp"
                         android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:hint="Working Experience"
@@ -208,10 +219,6 @@
                         />
 
                 </LinearLayout>
-
-
-
-
                 <!--<LinearLayout-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="wrap_content"-->
@@ -245,19 +252,68 @@
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
                         android:layout_marginRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/ic_empr_lan"/>
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
                         android:maxLines="1"
                         android:paddingLeft="@dimen/empr_between_layout"
-                        android:layout_marginLeft="10dp"
                         android:hint="Language Skill"
+                        android:layout_marginLeft="10dp"
                         android:background="@drawable/border"
                         />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="6dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/empr_satate"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <Spinner
+                            android:id="@+id/empr_city_sppost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:hint="State/Division"
+                            android:textColorHint="#05ab9a"/>
+
+                        <Spinner
+                            android:id="@+id/empr_townshipnew_sppost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:hint="State/Division"
+                            android:textColorHint="#05ab9a"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:maxLines="1"
+                            android:hint="Address"
+                            android:id="@+id/empr_jponew_address"
+                            android:paddingLeft="@dimen/empr_between_layout"
+                            android:layout_marginLeft="@dimen/empr_between_layout"
+                            android:background="@drawable/border"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -268,17 +324,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/ic_empr_gra"/>
                     <Switch
                         android:text="Graduated?"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
-                        android:paddingLeft="10dp"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="15dp"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:id="@+id/switch1"
-                        app:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/empr_granew_sw"
+                        android:theme="@style/BrandedSwitch.control"
                         />
                 </LinearLayout>
 
@@ -290,17 +344,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/ic_empr_single"/>
                     <Switch
                         android:text="Single?"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/switch2"
-                        android:paddingLeft="10dp"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
-                        android:layout_marginTop="9dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/empr_singlenew_sw"
+                        android:paddingLeft="15dp"
                         android:textAppearance="?android:textAppearanceMedium"
-                        app:theme="@style/BrandedSwitch.control"/>
+                        android:theme="@style/BrandedSwitch.control"/>
 
                 </LinearLayout>
 
@@ -312,18 +364,17 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_school_black_24dp"
+                        android:src="@drawable/accomo"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
 
 
                     <Switch
                         android:text="Accommodation"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/switch3"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        android:layout_height="match_parent"
+                        android:id="@+id/empr_accomonew_sw"
                         android:textAppearance="?android:textAppearanceMedium"
-                        app:theme="@style/BrandedSwitch.control"
+                        android:theme="@style/BrandedSwitch.control"
                         />
 
                 </LinearLayout>
@@ -335,17 +386,15 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-                        android:src="@drawable/ic_school_black_24dp"
+                        android:src="@drawable/salad"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
                     <Switch
                         android:text="Food"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
-                        app:theme="@style/BrandedSwitch.control"
-                        android:id="@+id/switch4"
+                        android:layout_height="match_parent"
+                        android:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/empr_foodnew_sw"
                         />
                 </LinearLayout>
 
@@ -359,18 +408,16 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-                        android:src="@drawable/ic_school_black_24dp"
+                        android:src="@drawable/bus"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
 
                     <Switch
                         android:text="Transportation"
                         android:layout_width="match_parent"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/switch5"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
-                        app:theme="@style/BrandedSwitch.control"
+                        android:layout_height="match_parent"
+                        android:id="@+id/empr_trannew_sw"
+                        android:theme="@style/BrandedSwitch.control"
                         />
 
                 </LinearLayout>
@@ -383,8 +430,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-                        android:src="@drawable/ic_school_black_24dp"
+                        android:src="@drawable/lecture"
                         android:paddingRight="@dimen/activity_horizontal_margin"/>
 
                     <Switch
@@ -392,9 +438,8 @@
                         android:textAppearance="?android:textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/empr_between_layout"
-                        app:theme="@style/BrandedSwitch.control"
-                        android:id="@+id/switch6" />
+                        android:theme="@style/BrandedSwitch.control"
+                        android:id="@+id/empr_trainnew_sw" />
 
                 </LinearLayout>
 
@@ -409,7 +454,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="15dp"
-                        android:src="@drawable/ic_school_black_24dp"/>
+                        android:src="@drawable/range"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -422,6 +467,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:paddingLeft="5dp"
+                            android:inputType="phone"
+                            android:id="@+id/empr_jobnew_min"
                             android:background="@drawable/border"
                             android:hint="Minimum"/>
 
@@ -438,34 +485,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
+                            android:id="@+id/empr_jobnew_max"
                             android:paddingLeft="5dp"
                             android:background="@drawable/border"
                             android:hint="Maximum"/>
                     </LinearLayout>
 
                 </LinearLayout>
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:paddingBottom="6dp">-->
-
-                <!--<ImageView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:paddingRight="5dp"-->
-                <!--android:src="@drawable/ic_restaurant_black_24dp"/>-->
-                <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="32dp"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
-                <!--android:background="@drawable/border"-->
-                <!--android:textAppearance="?android:textAppearanceMedium"-->
-                <!--android:text="Facilities"/>-->
-                <!--</LinearLayout>-->
 
 
                 <LinearLayout
@@ -477,37 +503,54 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:src="@drawable/ic_school_black_24dp" />
+                        android:src="@drawable/ic_empr_coabout" />
+
 
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:maxLines="3"
+                        android:id="@+id/empr_jobnew_desc"
                         android:layout_marginLeft="10dp"
                         android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:hint="Working Experience"
+                        android:hint="Description"
                         android:background="@drawable/border"
                         />
 
                 </LinearLayout>
 
+
+
             </LinearLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_horizontal_margin">
+                android:layout_height="fill_parent"
+                android:layout_marginTop="15dp"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_gravity="bottom">
+
                 <Button
+                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:text="Save"
-                    android:layout_marginBottom="@dimen/empr_between_layout"
+                    android:id="@+id/empr_compronew_save"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:background="@color/colorback"
-                    android:id="@+id/gotoemp"
-                    />
+                    android:background="@color/colorback" />
+
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:text="Back"
+                    android:id="@+id/empr_compronew_back"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/colorback" />
+
+
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+
 
 </FrameLayout>

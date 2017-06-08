@@ -39,7 +39,7 @@ String userid;
     public void onTabSelected(@IdRes int tabId) {
         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-        if (tabId == R.id.tab_favorites)
+        if (tabId == R.id.tab_dash)
 
         {
             fragmentTransaction.replace(R.id.empr_container, new EmprDashboard());
@@ -47,11 +47,11 @@ String userid;
             //bundle.putString("userid_get",userid);
             //fragment.setArguments(bundle);
             fragmentTransaction.commit();
-        } else if (tabId == R.id.tab_nearby) {
+        } else if (tabId == R.id.tab_post) {
             fragmentTransaction.replace(R.id.empr_container, new Emprpostnewjob());
             fragmentTransaction.commit();
         }
-        else if (tabId == R.id.tab_friends) {
+        else if (tabId == R.id.tab_view) {
             fragmentTransaction.replace(R.id.empr_container, new EmprCandilist());
             fragmentTransaction.commit();
         }

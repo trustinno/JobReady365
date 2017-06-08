@@ -23,22 +23,27 @@ public class Emprpostnewjob extends Fragment {
         // Required empty public constructor
     }
 
-    EditText editTextdialog;
-    TextView editText;
+
+
+
+   private EditText editTextdialog;
+   private TextView editText;
+   private Button emprnew;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_emprpostnewjob, container, false);
 
-        String[] SPINNERLIST = {"Freelance", "Full Time", "Part Time", "Contract"};
-        String[] spinner = {"Alone", "Sanchaung"};
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
-   Spinner      materialDesignSpinner = (Spinner)
-                view.findViewById(R.id.android_material_design_spinner);
-        materialDesignSpinner.setAdapter(arrayAdapter);
-        editText = (TextView) view.findViewById(R.id.editquilifi);
+        emprnew=(Button)view.findViewById(R.id.empr_compronew_save);
+        emprnew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                postjobnew();
+            }
+        });
+        editText = (TextView) view.findViewById(R.id.editquilifinew);
         editText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +53,7 @@ public class Emprpostnewjob extends Fragment {
                 lp.width = WindowManager.LayoutParams.MATCH_PARENT;
                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
                 dialog.setContentView(R.layout.empr_qul_dialog);
-                TextView editText2 = (TextView)v.findViewById(R.id.editquilifi);
+                TextView editText2 = (TextView)v.findViewById(R.id.editquilifinew);
                 String reedit = editText2.getText().toString();
                 editTextdialog.setText(reedit);
                 final Button diaglogbutton = (Button) dialog.findViewById(R.id.diaglog_button);
@@ -77,14 +82,18 @@ public class Emprpostnewjob extends Fragment {
             }
         });
 
-        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_dropdown_item_1line, spinner);
-
-        Spinner materialDesignSpinner1 = (Spinner)
-                view.findViewById(R.id.android_material_design_spinner);
-        materialDesignSpinner1.setAdapter(arrayAdapter1);
 
 
         return view;
     }
+
+    private void postjobnew() {
+
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 }
