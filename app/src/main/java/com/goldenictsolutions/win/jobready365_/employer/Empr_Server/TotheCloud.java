@@ -1,5 +1,6 @@
 package com.goldenictsolutions.win.jobready365_.employer.Empr_Server;
 
+import android.content.Intent;
 import android.text.Html;
 import android.util.Log;
 
@@ -56,6 +57,41 @@ public class TotheCloud {
             public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
                 // handle execution failures like no internet connectivity
                 Log.e(TAG, "Failure "+t.getMessage());
+                Empr_Busprovider.getBus().post(new Empr_Error_Event(-2, t.getMessage()));
+            }
+        });
+    }
+
+
+    public void emgetcom(String id)
+
+    {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(logging);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(httpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(SERVER_URL).build();
+
+
+        Interface service = retrofit.create(Interface.class);
+        Call<Empr_Server_Response> call = service.postcom(id);
+        //       logo,
+        call.enqueue(new Callback<Empr_Server_Response>() {
+            @Override
+            public void onResponse(Call<Empr_Server_Response> call, Response<Empr_Server_Response> response) {
+                Log.e(TAG, "Success" + response.code());
+                Log.e(TAG, "Success" + response.body());
+                Log.e(TAG, "Success" + response.message());
+                Empr_Busprovider.getBus().post(new Empr_Serverevent_candidate(response.body()));
+                Log.e(TAG, "Success");
+            }
+            @Override
+            public void onFailure(Call<Empr_Server_Response> call, Throwable t) {
+                Log.e(TAG, "Failure" + t.getMessage());
                 Empr_Busprovider.getBus().post(new Empr_Error_Event(-2, t.getMessage()));
             }
         });

@@ -1,6 +1,7 @@
 package com.goldenictsolutions.win.jobready365_.employer.Empr_Server;
 
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Businesstype;
+import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Candidate_count;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_City;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_JobType;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Township;
@@ -43,6 +44,8 @@ public class Empr_Server_Response
     @SerializedName("user_company")
     private ArrayList<Empr_getallcomp>empr_getallcomps=null;
 
+    @SerializedName("candidate")
+    private ArrayList<Empr_Candidate_count> candidates=null;
 
 
 
@@ -70,5 +73,6 @@ public class Empr_Server_Response
         return empr_getallcomps;
     }
 
+    public ArrayList<Empr_Candidate_count>getCandidates(){return candidates;}
 
 }

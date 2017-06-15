@@ -161,6 +161,7 @@ public class Emprdashcomprmod extends Fragment {
             spinner1 = (Spinner)getActivity().findViewById(R.id.empr_modstate_spinner);
             adapter1 = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_dropdown_item, spcity);
             adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner1.setPrompt("Choosespinner");
             spinner1.setAdapter(adapter1);
 
         }

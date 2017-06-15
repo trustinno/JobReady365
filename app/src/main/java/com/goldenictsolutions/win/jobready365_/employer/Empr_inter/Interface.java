@@ -47,6 +47,9 @@ public interface Interface {
             @Query("city") String city
     );
 
+    @GET("api/candidate_count/{company_id}")
+    Call<Empr_Server_Response> postcom(@Path("company_id")String id);
+
 
     @GET("api/township/{city_id}")
     Call<Empr_Server_Response>gettownship(

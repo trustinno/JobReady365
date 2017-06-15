@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 import com.goldenictsolutions.win.jobready365_.R;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Busprovider;
@@ -25,6 +27,7 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Town
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 public class Emprcompro extends AppCompatActivity {
@@ -44,9 +47,10 @@ public class Emprcompro extends AppCompatActivity {
     private List spbustype = new ArrayList<>();
     private List spbustypeid = new ArrayList<>();
     private Button  empr_compro_save,empr_compro_back;
-
+    private Switch wantogo_postjob;
+    int switchtoid=0;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empr_comp_pro);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -69,7 +73,7 @@ public class Emprcompro extends AppCompatActivity {
         spbustypespinner();
 
         ////////////////////////
-
+        wantogo_postjob=(Switch)findViewById(R.id.empr_compro_postjob);
         cname = (EditText) findViewById(R.id.empr_compro_name);
         cadd = (EditText) findViewById(R.id.empr_compro_address);
         cemail = (EditText) findViewById(R.id.empr_compro_email);
@@ -125,12 +129,14 @@ final String formdashadd =getIntent().getStringExtra("fromdash");
 
             @Override
             public void onClick(View v) {
-
+                Switchforpost switchforpost=new Switchforpost();
                 Spcity spcity=new  Spcity();
                 Sptownship sptownship=new Sptownship();
                 Spbustype spbustype=new Spbustype();
+                Switchforpost switchforpost1=new Switchforpost();
+                int apk=switchforpost1.getSwitchto();
 
-//
+            //
 //                user_id="2388d1e90e8f4a37a657c42dc6cc30af";
 //                job_industry=spbustype.getbustypeid();
 //                logo="";
@@ -152,16 +158,48 @@ final String formdashadd =getIntent().getStringExtra("fromdash");
 //
 //            Toast.makeText(getApplicationContext(),String.valueOf(township),Toast.LENGTH_LONG).show();
 
+                if (apk == 1)
+                {
 
-                String companyname="Google";
-                Intent intent=new Intent(Emprcompro.this,Emprjobpost.class);
-                intent.putExtra("comnaem",companyname);
-                startActivity(intent);
+                    String companyname="Google";
+                    Intent intent=new Intent(Emprcompro.this,Emprjobpost.class);
+                    intent.putExtra("comnaem",companyname);
+                    startActivity(intent);
+
+                }
+
+                else if (apk == 0)
+                {
+                        Intent intent=new Intent(Emprcompro.this,Employerd.class);
+                        startActivity(intent);
+                }
+            }
+        });
+
+    wantogo_postjob.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Switchforpost switchforpost=new Switchforpost();
+
+                if (isChecked)
+                {
+                        switchtoid =1;
+                        switchforpost.setSwitchto(switchtoid);
+                    Toast.makeText(getApplicationContext(),"switch FA is on",Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                     switchtoid=0;
+                    switchforpost.setSwitchto(switchtoid);
+                }
+
 
             }
         });
 
+
     }
+
 
 
     /////////////////////////////////  POST JOB ////////////////////////////////////////////////
@@ -386,6 +424,21 @@ final String formdashadd =getIntent().getStringExtra("fromdash");
         }
     }
 
+
+
+    public static class Switchforpost
+    {
+        private static int switchto;
+
+        public void setSwitchto(int switchto_id){
+            switchto=switchto_id;
+        }
+        public int getSwitchto(){
+            return switchto;
+        }
+
+
+    }
     //////////////////////////////// END ///////////////////////////////////////////////////////
 
 

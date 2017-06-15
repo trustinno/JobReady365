@@ -12,6 +12,8 @@ public class Empr_Getter {
     private int fod;
     private int train;
     private String empr_compid;
+    private  int switchto;
+
 
     public void setGra(int grad){
         gra=grad;
@@ -46,6 +48,13 @@ public class Empr_Getter {
         empr_compid=empr_Compid;
     }
 
+
+        public void setSwitchto(int switchto_id){
+            switchto=switchto_id;
+        }
+        public int getSwitchto(){
+            return switchto;
+        }
 
 
     public int getGra(){

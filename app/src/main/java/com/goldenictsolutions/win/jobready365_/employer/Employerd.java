@@ -52,7 +52,7 @@ String userid;
             fragmentTransaction.commit();
         }
         else if (tabId == R.id.tab_view) {
-            fragmentTransaction.replace(R.id.empr_container, new EmprCandilist());
+            fragmentTransaction.replace(R.id.empr_container, new Empr_shortlist());
             fragmentTransaction.commit();
         }
 

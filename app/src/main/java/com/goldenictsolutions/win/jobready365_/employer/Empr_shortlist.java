@@ -1,7 +1,9 @@
 package com.goldenictsolutions.win.jobready365_.employer;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -26,7 +28,6 @@ import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.Empr_Servere
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.ServerEventgetAllCompany;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_Server.TotheCloud;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_adapter.Candidate_adapter_employer;
-import com.goldenictsolutions.win.jobready365_.employer.Empr_adapter.MoviesAdapter;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_Candidate_count;
 import com.goldenictsolutions.win.jobready365_.employer.Empr_datastore.Empr_getallcomp;
 import com.squareup.otto.Subscribe;
@@ -34,85 +35,81 @@ import com.squareup.otto.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmprDashboard extends Fragment {
+public class Empr_shortlist extends Fragment {
 
-    public EmprDashboard() {
+    public Empr_shortlist() {
         // Required empty public constructor
     }
-
-  private Button addcomp_pro,dash_edit,dash_view,dash_add;
- private String userid,empr_dash_userid,companyId,getCompanyId;
-  private   Spinner empr_dash_spinner;
+    private Button addcomp_pro,short_edit,dash_view,short_add;
+    private String userid,empr_dash_userid,companyId,getCompanyId;
+    private Spinner empr_short_spinner;
     private RecyclerView recyclerView;
-  private   TextView Disconnected;
-    private  ArrayList<Empr_Candidate_count> empr_candidate_counts;
+    private TextView Disconnected;
+    private static ArrayList<Empr_Candidate_count> empr_candidate_counts;
     ProgressDialog pd;
-     Candidate_adapter_employer candidate_adapter_employer;
-     private SwipeRefreshLayout swipeContainer;
-   private List spcompanyid=new ArrayList<>();
+    private Candidate_adapter_employer candidate_adapter_employer;
+    private SwipeRefreshLayout swipeContainer;
+    private List spcompanyid=new ArrayList<>();
     private  List spcompanyname=new ArrayList<>();
 
-  private ArrayAdapter<String> empr_dash_adp;
-  TotheCloud totheCloud;
+    private ArrayAdapter<String> empr_short_adp;
+    TotheCloud totheCloud;
+
+
     @Override
-    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_empr_dashboard, container, false);
-        //TextView textView=(TextView)view.findViewById(R.id.empr_dash_can);
+        View view= inflater.inflate(R.layout.fragment_empr_shortlist, container, false);
+
+
         totheCloud=new TotheCloud();
-       // userid=getArguments().getString("userid_get");
 
-        onclikallcomp(view);
-
-
-        initview(view);
-
-        empr_dash_userid="2388d1e90e8f4a37a657c42dc6cc30af";
-         companyId="";
-        getcompnaysp(empr_dash_userid,companyId);
+    empr_dash_userid="2388d1e90e8f4a37a657c42dc6cc30af";
+    companyId="";
+    getcompnaysp(empr_dash_userid,companyId);
 
 
-        final        FragmentManager fragmentManager = getFragmentManager();
-     final    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+    final FragmentManager fragmentManager = getFragmentManager();
+    final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 
-        swipeContainer = (SwipeRefreshLayout)view.findViewById(R.id.swipe_empr_dash);
-        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright);
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                loadJson();
-                swipeContainer.setRefreshing(false);
-            }
-        });
+    swipeContainer = (SwipeRefreshLayout)view.findViewById(R.id.swipe_short);
+    swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright);
+    swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            loadJson();
+            swipeContainer.setRefreshing(false);
+        }
+    });
 
-        dash_edit=(Button)view.findViewById(R.id.empr_dash_comedit);
-        dash_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Emprdashcompro emprdashcompro=new Emprdashcompro();
-                SpinnerComid spinnercom=new SpinnerComid();
-                getCompanyId=spinnercom.getid();
-                Bundle bundle=new Bundle();
-                bundle.putString("companyid",getCompanyId);
-                emprdashcompro.setArguments(bundle);
-                fragmentTransaction.replace(R.id.empr_container, emprdashcompro);
-                fragmentTransaction.commit();
+    short_edit=(Button)view.findViewById(R.id.empr_short_comedit);
+    short_edit.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Emprdashcompro emprdashcompro=new Emprdashcompro();
+            EmprDashboard.SpinnerComid spinnercom=new EmprDashboard.SpinnerComid();
+            getCompanyId=spinnercom.getid();
+            Bundle bundle=new Bundle();
+            bundle.putString("companyid",getCompanyId);
+            emprdashcompro.setArguments(bundle);
+            fragmentTransaction.replace(R.id.empr_container, emprdashcompro);
+            fragmentTransaction.commit();
 
-            }
-        });
+        }
+    });
 
-        dash_add=(Button)view.findViewById(R.id.empr_dash_add);
-        dash_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String addto="1";
-                Intent intent=new Intent(getActivity(),Emprcompro.class);
-                intent.putExtra("fromdash",addto);
-                startActivity(intent);
-            }
-        });
+    short_add=(Button)view.findViewById(R.id.empr_short_add);
+    short_add.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String addto="1";
+            Intent intent=new Intent(getActivity(),Emprcompro.class);
+            intent.putExtra("fromdash",addto);
+            startActivity(intent);
+        }
+    });
 
 //        dash_view=(Button)view.findViewById(R.id.empr_dash_view);
 //        dash_view.setOnClickListener(new View.OnClickListener() {
@@ -132,20 +129,26 @@ public class EmprDashboard extends Fragment {
 //            }
 //        });
 
-      return view;
-    }
+    return view;
+}
 
     public  void getcompnaysp(String empr_dash_userid,String companyId)
     {
-            totheCloud.getallcomp(empr_dash_userid,companyId);
+        totheCloud.getallcomp(empr_dash_userid,companyId);
     }
 
 
     public void initview(View view){
 
-        recyclerView=(RecyclerView)view.findViewById(R.id.recycler_empr_dash);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView=(RecyclerView)view.findViewById(R.id.recycler_short);
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this.getActivity());
+        // Toast.makeText(getApplicationContext(),""+employer.size(),Toast.LENGTH_LONG).show();
+        candidate_adapter_employer=new Candidate_adapter_employer(this.getActivity(),empr_candidate_counts);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(candidate_adapter_employer);
         recyclerView.smoothScrollToPosition(0);
+
         loadJson();
     }
 
@@ -176,16 +179,16 @@ public class EmprDashboard extends Fragment {
             spcompanyid.clear();
             List<Empr_getallcomp>allcom=serverEventgetAllCompany.getEmpr_server_response().getEmpr_getallcomps();
             for (int i=0;i<allcom.size();i++)
-                {
+            {
                 spcompanyid.add(allcom.get(i).getEmpr_compid());
                 spcompanyname.add(allcom.get(i).getEmpr_compname());
-                 }
+            }
 
-            empr_dash_spinner=(Spinner)getActivity().findViewById(R.id.empr_dashboard_sp);
-            empr_dash_adp=new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_dropdown_item,spcompanyname);
+            empr_short_spinner=(Spinner)getActivity().findViewById(R.id.empr_dashboard_sp_short);
+            empr_short_adp=new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_dropdown_item,spcompanyname);
             //empr_dash_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            empr_dash_spinner.setAdapter(empr_dash_adp);
-           // Toast.makeText(getContext(),spcompanyid.toString(),Toast.LENGTH_LONG).show();
+            empr_short_spinner.setAdapter(empr_short_adp);
+            // Toast.makeText(getContext(),spcompanyid.toString(),Toast.LENGTH_LONG).show();
 
         }
         else if (serverEventgetAllCompany.getEmpr_server_response().equals(null))
@@ -197,16 +200,16 @@ public class EmprDashboard extends Fragment {
 
     public void onclikallcomp(View view)
     {
-        empr_dash_spinner=(Spinner)view.findViewById(R.id.empr_dashboard_sp);
-        empr_dash_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        empr_short_spinner=(Spinner)view.findViewById(R.id.empr_dashboard_sp_short);
+        empr_short_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                    String empr_Compid=spcompanyid.get(position).toString();
+                String empr_Compid=spcompanyid.get(position).toString();
 
-                SpinnerComid spinnerComid=new SpinnerComid();
+                EmprDashboard.SpinnerComid spinnerComid=new EmprDashboard.SpinnerComid();
                 spinnerComid.setid(empr_Compid);
-       //         Toast.makeText(view.getContext(),empr_Compid,Toast.LENGTH_LONG).show();
+                //         Toast.makeText(view.getContext(),empr_Compid,Toast.LENGTH_LONG).show();
 
 
             }
@@ -226,40 +229,29 @@ public class EmprDashboard extends Fragment {
 
         if (serverEvent.getEmpr_server_response() != null) {
             empr_candidate_counts=  serverEvent.getEmpr_server_response().getCandidates();
-            recyclerView=(RecyclerView)getActivity().findViewById(R.id.recycler_empr_dash);
-            recyclerView.setAdapter(new Candidate_adapter_employer(getActivity(),empr_candidate_counts));
-
-            //Toast.makeText(MainActivity5.this, movieArrayList.toString(), Toast.LENGTH_SHORT).show();
-            swipeContainer.setRefreshing(false);
 
 
             //Toast.makeText(MainActivity5.this, movieArrayList.toString(), Toast.LENGTH_SHORT).show();
 
         }
-        else if (serverEvent.getEmpr_server_response().equals(null))
-        {
-            TextView textView4=(TextView)getView().findViewById(R.id.empr_dash_disconnect);
-            textView4.setText("Disconnected can't view recycler");
-        }
-
     }
 
 
 
 
-    ///////////////////////////// END /////////////////////////
+///////////////////////////// END /////////////////////////
 
-    public static class SpinnerComid
-    {
-        private static  String companyid;
+public static class SpinnerComid
+{
+    private static  String companyid;
 
-        public void setid(String company_Id) {
-            this.companyid = company_Id;
-        }
-            public String getid(){
+    public void setid(String company_Id) {
+        this.companyid = company_Id;
+    }
+    public String getid(){
         return companyid;
     }
-    }
+}
 
 
 
@@ -280,4 +272,5 @@ public class EmprDashboard extends Fragment {
         super.onPause();
         Empr_Busprovider.getBus().unregister(this);
     }
+
 }

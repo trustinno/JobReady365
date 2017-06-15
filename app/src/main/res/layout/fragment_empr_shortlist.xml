@@ -1,0 +1,178 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Empr_shortlist">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linear_empr_shotr">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
+            android:scrollbarTrackVertical="@drawable/empr_scroll"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/empr_short_hader"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/empr_between_layout">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Business Name"
+                            android:textColor="@color/colorback"
+                            android:maxLines="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentLeft="true"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:padding="5dp"
+                                android:background="@drawable/border"
+                                android:text="Gold Plan"/>
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:text="Upgrate"
+                                android:background="@color/colorback"
+                                android:layout_marginLeft="@dimen/empr_between_layout"
+                                />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorback"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/empr_dashboard_sp_short"
+                            android:hint="dkdiekeie"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="right"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="2dp"
+                            android:layout_weight="1">
+                            <Button
+                                android:layout_width="70dp"
+                                android:textAppearance="?android:textAppearanceSmall"
+                                android:layout_height="30dp"
+                                android:id="@+id/empr_short_comedit"
+                                android:background="@color/colorback"
+                                android:text="Edit"/>
+
+                            <Button
+                                android:layout_width="70dp"
+                                android:textAppearance="?android:textAppearanceSmall"
+                                android:layout_height="30dp"
+                                android:padding="2dp"
+                                android:layout_marginLeft="@dimen/empr_between_layout"
+                                android:background="@color/colorback"
+                                android:text="Delete"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Add"
+                        android:id="@+id/empr_short_add"
+                        android:background="@color/colorback"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/colorback"/>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/empr_short_body"
+                    android:layout_below="@+id/empr_dash_hader"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="InnerDemon"
+                        android:layout_alignParentLeft="true"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gulity Flower"
+                        android:gravity="center_horizontal"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipe_short"
+            >
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycler_short">
+
+
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
