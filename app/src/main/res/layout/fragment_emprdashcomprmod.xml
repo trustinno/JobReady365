@@ -1,0 +1,341 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Emprdashcomprmod">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
+        android:scrollbarTrackVertical="@drawable/empr_scroll">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:focusableInTouchMode="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_empr_business"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:maxLines="1"
+                    android:id="@+id/empr_compromod_name"
+                    android:layout_marginLeft="14dp"
+                    android:hint="Company Name"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/border"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/empr_between_layout"
+                    android:src="@drawable/ic_empr_bustype"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:id="@+id/empr_modbusiness_type"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColorHint="#05ab9a"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/empr_telephone"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:maxLines="1"
+                    android:id="@+id/empr_compromod_tel"
+                    android:layout_marginLeft="14dp"
+                    android:hint="Telephone"
+                    android:paddingLeft="8dp"
+                    android:inputType="phone"
+                    android:background="@drawable/border"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="6dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight ="5dp"
+                    android:src="@drawable/ic_empr_email"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:maxLines="1"
+                    android:id="@+id/empr_compromod_email"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Email"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/border"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="6dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/empr_between_layout"
+                    android:src="@drawable/empr_satate"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/empr_modstate_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:hint="State/Division"
+                        android:textColorHint="#05ab9a"/>
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:id="@+id/empr_modtownship_spinner"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColorHint="#05ab9a"/>
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:maxLines="1"
+                        android:hint="Address"
+                        android:id="@+id/empr_compromod_address"
+                        android:paddingLeft="@dimen/empr_between_layout"
+                        android:layout_marginLeft="@dimen/empr_between_layout"
+                        android:background="@drawable/border"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingBottom="10dp">-->
+
+
+            <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingRight="5dp"-->
+            <!--android:paddingTop="@dimen/empr_between_layout"-->
+            <!--android:src="@drawable/ic_school_black_24dp"/>-->
+
+
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/empr_pri"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:maxLines="1"
+                        android:layout_marginLeft="14dp"
+                        android:id="@+id/empr_compromod_prip"
+                        android:hint="Primary Person"
+                        android:paddingLeft="8dp"
+                        android:background="@drawable/border"
+                        />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:maxLines="1"
+                        android:inputType="phone"
+                        android:layout_marginLeft="25dp"
+                        android:hint="Telephone"
+                        android:id="@+id/empr_compromod_pritel"
+                        android:paddingLeft="8dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/border"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/empr_secondary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:maxLines="1"
+                        android:inputType="phone"
+                        android:layout_marginLeft="14dp"
+                        android:hint="Secondary Person"
+                        android:id="@+id/empr_compromod_secp"
+                        android:paddingLeft="8dp"
+                        android:background="@drawable/border"
+                        />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:maxLines="1"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="25dp"
+                        android:id="@+id/empr_compromod_sectel"
+                        android:hint="Mobile"
+                        android:paddingLeft="8dp"
+                        android:background="@drawable/border" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:src="@drawable/ic_empr_coabout"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:maxLines="1"
+                    android:id="@+id/empr_compromod_about"
+                    android:layout_marginLeft="14dp"
+                    android:hint="Company About"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/border"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_empr_attach"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:id="@+id/empr_compromod_comlo"
+                    android:layout_marginLeft="14dp"
+                    android:hint="Company Logo"
+                    android:padding="8dp"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:background="@drawable/border"/>
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="@dimen/empr_between_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/empr_between_layout"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorback"
+                    android:text="Upload"
+                    />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:text="Save"
+                    android:id="@+id/empr_compromod_save"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorback"
+
+                    />
+
+                <Button
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:text="Back"
+                    android:id="@+id/empr_compromod_back"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/colorback"
+
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>

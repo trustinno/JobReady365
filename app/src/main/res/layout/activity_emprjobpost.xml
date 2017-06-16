@@ -19,12 +19,6 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:id="@+id/empr_back_icon"
-                android:layout_height="?attr/actionBarSize"
-                android:src="@drawable/ic_navigate_before_black_24dp"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
                 android:src="@drawable/ic_jobready365"
                 android:paddingLeft="5dp"

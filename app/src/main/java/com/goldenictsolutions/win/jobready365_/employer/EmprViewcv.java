@@ -10,18 +10,22 @@ import android.view.ViewGroup;
 
 import com.goldenictsolutions.win.jobready365_.R;
 
+public class EmprViewcv extends Fragment {
 
-public class EmprJobPostVancancy extends Fragment {
-
-    public EmprJobPostVancancy() {
+    public EmprViewcv() {
 
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_empr_job_post_vancancy, container, false);
+        View view=inflater.inflate(R.layout.fragment_empr_viewcv, container, false);
+
+
+        return view;
     }
+
 
 }

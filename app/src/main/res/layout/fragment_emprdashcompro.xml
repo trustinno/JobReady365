@@ -1,0 +1,259 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.goldenictsolutions.win.jobready365_.employer.Emprdashcompro">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@drawable/scroll_bar_vertical_thumb"
+        android:scrollbarTrackVertical="@drawable/empr_scroll">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:orientation="vertical"
+                    android:paddingRight="@dimen/activity_horizontal_margin">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:src="@drawable/ic_jobready365" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:gravity="left"
+                    android:orientation="vertical"
+                    android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+                    <TextView
+                        android:id="@+id/empr_compro2_cname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Company Name"
+                        android:textStyle="bold"
+                        android:textAppearance="?android:textAppearanceMedium"
+                        android:textColor="@color/colorblack" />
+
+
+                        <TextView
+                            android:id="@+id/empr_compro2_primob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Mobile" />
+
+
+
+                    <TextView
+                        android:id="@+id/empr_compro2_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="xxx@gmail.com"
+                         />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:id="@+id/empr_compro2_bust"
+                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:layout_weight="1.2"
+                    android:hint="Business Type"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:id="@+id/empr_compro2_bustype"
+                    android:hint="Astrophysics"
+                    />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/empr_between_layout"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:layout_weight="1.2"
+                    android:id="@+id/empr_compro2_primc"
+                    android:hint="Primary Contact Person"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:id="@+id/empr_compro2_pricon"
+                    android:hint="U Hla"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/empr_between_layout"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:layout_weight="1.2"
+                    android:id="@+id/empr_compro2_primobi"
+                    android:hint="Mobile"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/empr_compro2_primobile"
+                    android:hint="09798484775"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/empr_between_layout"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:layout_weight="1.2"
+                    android:id="@+id/empr_compro2_secmc"
+                    android:hint="Secondary Person"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/empr_compro2_seccon"
+                    android:hint="U Mya"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/empr_between_layout"
+                android:weightSum="2">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:layout_weight="1.2"
+                    android:id="@+id/empr_compro2_secmobi"
+                    android:hint="Mobile"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:id="@+id/empr_compro2_secmobile"
+                    android:hint="0984756384"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="@dimen/empr_between_layout"
+                android:layout_marginTop="@dimen/empr_between_layout"
+                android:background="@color/colorback" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/empr_compro2_desc"
+                    android:text="Myanmar officially the Republic of the Union of Myanmar, also known as Burma, is a sovereign state in the region of Southeast Asia and has been a member of ..."
+                    android:textColor="@color/colorblack" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/activity_horizontal_margin">
+
+                <Button
+                    android:id="@+id/empr_dash_comback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Back" />
+
+                <Button
+                    android:id="@+id/empr_dash_commod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Modify" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
