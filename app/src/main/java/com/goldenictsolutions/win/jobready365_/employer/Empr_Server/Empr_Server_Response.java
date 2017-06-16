@@ -48,9 +48,15 @@ public class Empr_Server_Response
     private ArrayList<Empr_Candidate_count> candidates=null;
 
 
+    @SerializedName("status_code")
+    private int status_code;
 
     //@SerializedName("")
 
+
+    public Empr_Server_Response (int status_code){
+        this.status_code=status_code;
+    }
     public ArrayList<Empr_jobcate>getEmpr_jobcates(){return empr_jobcates;}
 
     public ArrayList<Empr_JobType>getJobTypes(){return jobTypes;}
@@ -75,4 +81,5 @@ public class Empr_Server_Response
 
     public ArrayList<Empr_Candidate_count>getCandidates(){return candidates;}
 
+    public int getStatus_code(){return status_code;}
 }

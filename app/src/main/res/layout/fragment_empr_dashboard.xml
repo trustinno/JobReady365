@@ -151,22 +151,33 @@
 
     </RelativeLayout>
     </ScrollView>
-<android.support.v4.widget.SwipeRefreshLayout
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/swipe_empr_dash">
+
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/recycler_empr_dash">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/empr_dash_disconnect"/>
+
     </android.support.v7.widget.RecyclerView>
+
 </android.support.v4.widget.SwipeRefreshLayout>
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_empr_disconnect"
+        android:visibility="invisible"
+        android:text="Cannot connnect right now or invlaid list"/>
+
+</RelativeLayout>
 </LinearLayout>
 
 

@@ -41,16 +41,16 @@ public class EmprDashboard extends Fragment {
     }
 
   private Button addcomp_pro,dash_edit,dash_view,dash_add;
- private String userid,empr_dash_userid,companyId,getCompanyId;
+ private String id,userid,empr_dash_userid,companyId,getCompanyId,spcomid;
   private   Spinner empr_dash_spinner;
     private RecyclerView recyclerView;
-  private   TextView Disconnected;
+  private   TextView Disconnected,disconnect;
     private  ArrayList<Empr_Candidate_count> empr_candidate_counts;
     ProgressDialog pd;
-     Candidate_adapter_employer candidate_adapter_employer;
+    private static  Candidate_adapter_employer candidate_adapter_employer;
      private SwipeRefreshLayout swipeContainer;
-   private List spcompanyid=new ArrayList<>();
-    private  List spcompanyname=new ArrayList<>();
+    List spcompanyid=new ArrayList<>();
+     List spcompanyname=new ArrayList<>();
 
   private ArrayAdapter<String> empr_dash_adp;
   TotheCloud totheCloud;
@@ -61,12 +61,10 @@ public class EmprDashboard extends Fragment {
         View view = inflater.inflate(R.layout.fragment_empr_dashboard, container, false);
         //TextView textView=(TextView)view.findViewById(R.id.empr_dash_can);
         totheCloud=new TotheCloud();
-       // userid=getArguments().getString("userid_get");
-
         onclikallcomp(view);
-
-
         initview(view);
+//        userid=getArguments().getString("userid_get");
+      //  disconnect=(TextView)getView().findViewById(R.id.empr_dash_disconnect);
 
         empr_dash_userid="2388d1e90e8f4a37a657c42dc6cc30af";
          companyId="";
@@ -157,9 +155,11 @@ public class EmprDashboard extends Fragment {
 
 
     public void post(){
-
-        String id="e1e768766a9e411e9522e3e5293c7e3a";
+        SpinnerComid spinnerComid=new SpinnerComid();
+      // id="e1e768766a9e411e9522e3e5293c7e3a";
+        id=spinnerComid.getid();
         totheCloud.emgetcom(id);
+
     }
 
 
@@ -167,20 +167,19 @@ public class EmprDashboard extends Fragment {
     @Subscribe
     public void onServerEvent(ServerEventgetAllCompany serverEventgetAllCompany)
     {
-
         if (!serverEventgetAllCompany.getEmpr_server_response().equals(null))
         {
 
-
             spcompanyname.clear();
             spcompanyid.clear();
+
             List<Empr_getallcomp>allcom=serverEventgetAllCompany.getEmpr_server_response().getEmpr_getallcomps();
             for (int i=0;i<allcom.size();i++)
                 {
                 spcompanyid.add(allcom.get(i).getEmpr_compid());
                 spcompanyname.add(allcom.get(i).getEmpr_compname());
                  }
-
+              loadJson();
             empr_dash_spinner=(Spinner)getActivity().findViewById(R.id.empr_dashboard_sp);
             empr_dash_adp=new ArrayAdapter<String>(this.getActivity(),android.R.layout.simple_spinner_dropdown_item,spcompanyname);
             //empr_dash_adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -202,13 +201,14 @@ public class EmprDashboard extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+
                     String empr_Compid=spcompanyid.get(position).toString();
 
                 SpinnerComid spinnerComid=new SpinnerComid();
                 spinnerComid.setid(empr_Compid);
        //         Toast.makeText(view.getContext(),empr_Compid,Toast.LENGTH_LONG).show();
 
-
+                loadJson();
             }
 
             @Override
@@ -224,24 +224,38 @@ public class EmprDashboard extends Fragment {
     @Subscribe
     public void onServerEvent(Empr_Serverevent_candidate serverEvent) {
 
-        if (serverEvent.getEmpr_server_response() != null) {
-            empr_candidate_counts=  serverEvent.getEmpr_server_response().getCandidates();
-            recyclerView=(RecyclerView)getActivity().findViewById(R.id.recycler_empr_dash);
-            recyclerView.setAdapter(new Candidate_adapter_employer(getActivity(),empr_candidate_counts));
+         if (serverEvent.getEmpr_server_response() ==null) {
+            TextView textView=(TextView)getActivity().findViewById(R.id.recycler_empr_disconnect);
+            swipeContainer=(SwipeRefreshLayout)getActivity().findViewById(R.id.swipe_empr_dash);
+            swipeContainer.setVisibility(View.INVISIBLE);
+             textView.setVisibility(View.VISIBLE);
 
+         }
+         else if (!serverEvent.getEmpr_server_response().equals(null))
+         {
+
+             empr_candidate_counts = serverEvent.getEmpr_server_response().getCandidates();
+
+//            recyclerView = (RecyclerView) getActivity().findViewById(R.id.recycler_empr_dash);
+             //              recyclerView.removeAllViewsInLayout();
+             //        recyclerView.removeAllViews();
+             candidate_adapter_employer = new Candidate_adapter_employer(getActivity(), empr_candidate_counts);
+             //Toast.makeText(MainActivity5.this, movieArrayList.toString(), Toast.LENGTH_SHORT).show();
+             ;
+             recyclerView.setAdapter(candidate_adapter_employer);
+             //recyclerView.removeAllViewsInLayout();
+             // recyclerView.removeAllViews();
+             //empr_candidate_counts.clear();
+             swipeContainer.setRefreshing(false);
+         }
+        else {
+             TextView textView=(TextView)getActivity().findViewById(R.id.recycler_empr_disconnect);
+             swipeContainer=(SwipeRefreshLayout)getActivity().findViewById(R.id.swipe_empr_dash);
+             swipeContainer.setVisibility(View.INVISIBLE);
+             textView.setVisibility(View.VISIBLE);
+
+         }
             //Toast.makeText(MainActivity5.this, movieArrayList.toString(), Toast.LENGTH_SHORT).show();
-            swipeContainer.setRefreshing(false);
-
-
-            //Toast.makeText(MainActivity5.this, movieArrayList.toString(), Toast.LENGTH_SHORT).show();
-
-        }
-        else if (serverEvent.getEmpr_server_response().equals(null))
-        {
-            TextView textView4=(TextView)getView().findViewById(R.id.empr_dash_disconnect);
-            textView4.setText("Disconnected can't view recycler");
-        }
-
     }
 
 
@@ -253,12 +267,15 @@ public class EmprDashboard extends Fragment {
     {
         private static  String companyid;
 
+
         public void setid(String company_Id) {
             this.companyid = company_Id;
         }
             public String getid(){
         return companyid;
     }
+
+
     }
 
 

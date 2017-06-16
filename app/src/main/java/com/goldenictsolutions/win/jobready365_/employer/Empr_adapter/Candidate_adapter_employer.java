@@ -36,6 +36,7 @@ public class Candidate_adapter_employer extends RecyclerView.Adapter<Candidate_a
 
     @Override
     public void onBindViewHolder(Candidate_adapter_employer.ViewHolder viewHolder, int position) {
+
         viewHolder.title.setText(candidates.get(position).getJob_tile());
         // viewHolder.actors.setText(String.valueOf(candidates.get(position).getJob_count()));//viewHolder.imageView.setImageURI(movies.get(i).getCover());
     }

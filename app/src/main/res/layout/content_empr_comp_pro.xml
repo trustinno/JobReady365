@@ -61,6 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="14dp"
+                    android:background="@drawable/border"
                     android:id="@+id/empr_business_type"
                     android:textAppearance="?android:textAppearanceMedium"
                     android:textColorHint="#05ab9a"/>
@@ -134,19 +135,23 @@
                     <android.support.v7.widget.AppCompatSpinner
                         android:id="@+id/empr_state_spinner"
                         android:layout_width="match_parent"
+                        android:background="@drawable/border"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="14dp"
                         android:textAppearance="?android:textAppearanceMedium"
                         android:hint="State/Division"
+                        android:layout_marginBottom="@dimen/empr_between_layout"
                         android:textColorHint="#05ab9a"/>
 
                     <android.support.v7.widget.AppCompatSpinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/border"
                         android:layout_marginLeft="14dp"
                         android:id="@+id/empr_township_spinner"
                         android:textAppearance="?android:textAppearanceMedium"
-                        android:textColorHint="#05ab9a"/>
+                        android:textColorHint="#05ab9a"
+                        android:layout_marginBottom="@dimen/empr_between_layout"/>
 
 
                     <EditText
